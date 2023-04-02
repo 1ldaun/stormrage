@@ -91,3 +91,48 @@
   }
 }
 
+.mobileScreen {
+  display: flex;
+  width: calc(100% + 10vw);
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: -5vw;
+  background: linear-gradient(270deg,#235aa6,#101b3b);
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    margin-left: 50px;
+
+    >*:not(:last-child) {
+      margin-bottom: 18px;
+    }
+
+    &__item {
+      color: var(--snowy);
+      font-size: 28px;
+      font-weight: 700;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    bottom: 15px;
+
+    * {
+      font-size: 30px;
+      color: var(--snowy);
+
+      &:not(:last-child) {
+        margin-right: 50px;
+      }
+    }
+  }
+}

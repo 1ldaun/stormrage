@@ -135,4 +135,13 @@
       }
     }
   }
+
+  &__close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 30px;
+    color: var(--snowy);
+    cursor: pointer;
+  }
 }

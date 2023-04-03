@@ -3,12 +3,18 @@
 .wrapper {
   height: 90px;
   width: 100%;
+  padding: 0 12vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    padding: 0 5vw;
+  }
 }
 
 .logo {
@@ -93,12 +99,13 @@
 
 .mobileScreen {
   display: flex;
-  width: calc(100% + 10vw);
+  width: 100vw;
   height: 100vh;
   position: absolute;
   top: 0;
-  left: -5vw;
   background: linear-gradient(270deg,#235aa6,#101b3b);
+  z-index: 5;
+  overflow: hidden;
 
   &__nav {
     display: flex;

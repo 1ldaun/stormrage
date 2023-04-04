@@ -7,9 +7,11 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   sonarcloud:
-    name: SonarCloud
+    name: SonarCloud with coverage
     runs-on: ubuntu-latest
     steps:
+      - name: Unit-testing
+        run: react-scripts test --watchAll --coverage
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
@@ -21,5 +23,3 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Unit-testing
-        run: react-scripts test --watchAll --coverage

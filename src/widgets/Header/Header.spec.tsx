@@ -25,12 +25,12 @@ describe("<Header/>", () => {
 
     it("Display mobile screen", () => {
         const wrapper = mount(<Header/>);
-        expect(wrapper.find(".mobileScreen").exists()).toBeFalsy();     // mobileScreen hidden
+        expect(wrapper.find(".mobileScreen").exists()).toBeFalsy();     //  mobileScreen hidden
 
         const navButton = wrapper.find(".mobileNavigation");
         expect(navButton.exists()).toBeTruthy();
         navButton.simulate('click');
 
-        expect(wrapper.find(".mobileScreen").exists()).toBeTruthy();    // mobileScreen displayed
+        expect(wrapper.find(".mobileScreen").exists()).toBeTruthy();    //  mobileScreen displayed
     })
 })

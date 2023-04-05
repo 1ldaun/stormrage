@@ -16,6 +16,7 @@ jobs:
           args: >
             -Dsonar.tests=src
             -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
+            -Dsonar.coverage.exclusions=src/**/*.spec.tsx,src/index.tsx,babel.config.js
       - name: Install dependencies
         run: npm ci
       - name: Unit-testing

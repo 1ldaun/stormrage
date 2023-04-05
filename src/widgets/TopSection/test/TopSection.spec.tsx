@@ -1,6 +1,6 @@
 import {configure, mount} from "enzyme";
 import Adapter from '@cfaester/enzyme-adapter-react-18';
-import TopSection from "./TopSection";
+import TopSection from "../TopSection";
 
 configure({ adapter: new Adapter() });
 

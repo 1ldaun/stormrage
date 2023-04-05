@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Header from "../Header";
 import {configure, mount} from "enzyme";
 import Adapter from '@cfaester/enzyme-adapter-react-18';
 

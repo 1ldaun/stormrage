@@ -21,7 +21,7 @@ const Case = (props: CaseProps) => {
             </div>
             <div className={styles.infoBlock}>
                 <h3 className={styles.infoBlock__title}>{title}</h3>
-                {subtitles.map(subtitle => <p className={styles.infoBlock__subtitle}>{subtitle}</p>)}
+                {subtitles.map(subtitle => <p key={subtitle} className={styles.infoBlock__subtitle}>{subtitle}</p>)}
                 <button className={styles.infoBlock__button}>
                     <span className={styles.infoBlock__text}>Case Study</span>
                 </button>

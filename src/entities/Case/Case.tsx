@@ -4,24 +4,28 @@ import styles from "./Case.module.scss"
 export interface CaseProps {
     id: number;
     title: string;
-    subTitles: string[];
+    subtitles: string[];
     url: string;
     imageUrl: string;
 }
 
 const Case = (props: CaseProps) => {
-    const {id, url, subTitles, title, imageUrl} = props;
+    const {id, url, subtitles, title, imageUrl} = props;
 
     return (
-        <a href={url} target="_blank" className={styles.wrapper}>
+        <a href={url} target="_blank" className={styles.wrapper} style={{backgroundImage: `url("${imageUrl}")`}}>
             <div className={styles.mask}/>
             <div className={styles.numberBlock}>
                 <div className={styles.numberBlock__back}>01</div>
-                <div className={styles.numberBlock__front}/>
+                <div className={styles.numberBlock__front}><div data-index="01" className={styles.numberBlock__frontOverlay}>01</div></div>
             </div>
-            <h3 className={styles.title}>{title}</h3>
-            {subTitles.map(subtitle => <p className={styles.subTitle}>{subtitle}</p>)}
-            <input type="button" className={styles.button} value="Case Study"/>
+            <div className={styles.infoBlock}>
+                <h3 className={styles.infoBlock__title}>{title}</h3>
+                {subtitles.map(subtitle => <p className={styles.infoBlock__subTitle}>{subtitle}</p>)}
+                <button className={styles.infoBlock__button}>
+                    <span className={styles.infoBlock__text}>Case Study</span>
+                </button>
+            </div>
         </a>
     );
 };

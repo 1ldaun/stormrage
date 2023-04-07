@@ -1,4 +1,8 @@
 import birdImgUrl from "../img/bird.jpg";
+import spotifyImgUrl from "../img/spotify.jpg";
+import deliveryImgUrl from "../img/delivery.jpg";
+import alCatanImgUrl from "../img/al-catan.jpg";
+import iProffiImgUrl from "../img/iproffi.jpg";
 
 export const cases = [
     {
@@ -8,7 +12,7 @@ export const cases = [
             "Another one Spotify clone. Made with Redux and Spotify API",
         ],
         url: "https://spotify.ildan-dev.ru/",
-        imageUrl: birdImgUrl,
+        imageUrl: spotifyImgUrl,
     },
     {
         title: "Foo-Bar",
@@ -26,7 +30,7 @@ export const cases = [
             "Course platform like Geekbrains and Skillbox",
         ],
         url: "https://i-proffi.com/",
-        imageUrl: birdImgUrl,
+        imageUrl: iProffiImgUrl,
     },
     {
         title: "Hotel 'Bird'",
@@ -43,7 +47,7 @@ export const cases = [
             "Made with React + TS",
         ],
         url: "https://al-catan.ildan-dev.ru/",
-        imageUrl: birdImgUrl,
+        imageUrl: alCatanImgUrl,
     },
     {
         title: "Delivery food",
@@ -52,6 +56,6 @@ export const cases = [
             "Google PageSpeed Insights score: 95-100",
         ],
         url: "https://delivery-food.ildan-dev.ru/",
-        imageUrl: birdImgUrl,
+        imageUrl: deliveryImgUrl,
     },
 ]

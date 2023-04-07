@@ -37,11 +37,25 @@
   }
 
   &:nth-child(odd) {
-    transform: translateX(50px);
+    transform: translateX(30px);
+
+    @media (max-width: 768px) {
+      transform: none;
+    }
   }
 
   &:nth-child(even) {
-    transform: translateX(-50px);
+    transform: translateX(-30px);
+    text-align: right;
+
+    .numberBlock {
+      left: -95px;
+    }
+
+    @media (max-width: 768px) {
+      transform: none;
+      text-align: unset;
+    }
   }
 
   &::before {
@@ -56,6 +70,15 @@
     opacity: .6;
     transition: opacity .3s ease;
     z-index: 2;
+
+    @media (max-width: 768px) {
+      opacity: .83;
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 275px;
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,.45);
   }
 }
 
@@ -92,7 +115,7 @@
   height: 198px;
   opacity: 0;
   position: absolute;
-  right: -95px;
+  right: -85px;
   top: -70px;
   transition: opacity .3s,transform .45s,color .6s cubic-bezier(.694,.048,.335,1),-webkit-transform .45s;
   width: 265px;
@@ -105,11 +128,6 @@
     top: 0;
     width: 100%;
   }
-
-  &__front {
-
-  }
-
   &__frontOverlay {
     color: transparent;
     overflow: hidden;
@@ -132,12 +150,16 @@
       width: 100%;
     }
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .infoBlock {
   position: absolute;
-  left: 40px;
   bottom: 90px;
+  margin: 0 40px;
   z-index: 10;
 
   &__title {
@@ -145,6 +167,19 @@
     font-weight: 700;
     margin-bottom: 10px;
     z-index: 10;
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 32px;
+    }
+  }
+
+  &__subtitle {
+    @media (max-width: 768px) {
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
   }
 
   &__button {
@@ -154,14 +189,14 @@
     cursor: pointer;
     display: inline-block;
     font-family: League Spartan,Helvetica,Arial,sans-serif;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 1.6px;
     overflow: hidden;
-    padding: 12px 20px;
+    padding: 10px 14px;
     position: relative;
     transition: all .3s;
-    width: 152px;
+    width: 112px;
   }
 
   &__text {
@@ -183,6 +218,19 @@
       transition: .6s cubic-bezier(.694,.048,.335,1) .05s;
       width: 40px;
     }
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    margin: 0;
+    bottom: unset;
   }
 }
 

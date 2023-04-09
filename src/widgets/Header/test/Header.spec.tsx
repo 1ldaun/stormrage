@@ -6,7 +6,7 @@ configure({ adapter: new Adapter() });
 
 describe("<Header/>", () => {
     it("Rendering", () => {
-        const wrapper = mount(<Header/>);
+        const wrapper = mount(<Header setInfoSectionActive={jest.fn()}/>);
 
         const navigation = wrapper.find(".navigation");
         expect(navigation.exists()).toBeTruthy();
@@ -24,7 +24,7 @@ describe("<Header/>", () => {
     });
 
     it("Display mobile screen", () => {
-        const wrapper = mount(<Header/>);
+        const wrapper = mount(<Header setInfoSectionActive={jest.fn()}/>);
         expect(wrapper.find(".mobileScreen").exists()).toBeFalsy();     //  mobileScreen hidden
 
         const navButton = wrapper.find(".mobileNavigation");

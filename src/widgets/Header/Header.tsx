@@ -3,7 +3,11 @@ import cx from "classnames"
 import logoImg from '../../shared/img/logo-grey2.png'
 import styles from './Header.module.scss'
 
-const Header = () => {
+export interface HeaderProps {
+    setInfoSectionActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Header = ({setInfoSectionActive}: HeaderProps) => {
     const [isMobileMenuActive, setIsMobileMenuActive] = useState(false)
 
     const mobileMenuHandler = () => setIsMobileMenuActive(prev => !prev);
@@ -14,7 +18,7 @@ const Header = () => {
                 <img src={logoImg} className={styles.logo} alt="logo"/>
                 <ul className={styles.navigation}>
                     <li className={styles.navigation__item}>Works</li>
-                    <li className={styles.navigation__item}>About me</li>
+                    <li className={styles.navigation__item} onClick={() => setInfoSectionActive(true)}>About me</li>
                 </ul>
                 <div className={styles.mobileNavigation} onClick={mobileMenuHandler}>
                     <span className={cx(styles.mobileNavigation__item, styles.mobileNavigation__item_top)}/>
@@ -26,7 +30,7 @@ const Header = () => {
                 <ul className={styles.mobileScreen__nav}>
                     <li className={styles.mobileScreen__nav__item}>Home</li>
                     <li className={styles.mobileScreen__nav__item}>Works</li>
-                    <li className={styles.mobileScreen__nav__item}>About me</li>
+                    <li className={styles.mobileScreen__nav__item} onClick={() => {mobileMenuHandler(); setInfoSectionActive(true);}}>About me</li>
                 </ul>
                 <div className={styles.mobileScreen__icons}>
                     <a href="https://t.me/d1sinterested" target="_blank" rel="noreferrer" ><i className="fab fa-telegram-plane"/></a>

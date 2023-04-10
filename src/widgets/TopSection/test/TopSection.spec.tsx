@@ -6,7 +6,7 @@ configure({ adapter: new Adapter() });
 
 describe("<TopSection/>", () => {
     it("Rendering", () => {
-        const wrapper = mount(<TopSection/>);
+        const wrapper = mount(<TopSection setInfoSectionActive={jest.fn()}/>);
         expect(wrapper.exists()).toBeTruthy();
 
         const background = wrapper.find(".background");

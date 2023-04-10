@@ -2,7 +2,11 @@ import React from 'react';
 import styles from "./TopSection.module.scss"
 import bgLogo from "../../shared/img/logo512.png"
 
-const TopSection = () => {
+export interface TopSectionProps {
+    setInfoSectionActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const TopSection = ({setInfoSectionActive}: TopSectionProps) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.background}>
@@ -11,7 +15,7 @@ const TopSection = () => {
             <div className={styles.infoBlock}>
                 <p className={styles.infoBlock__name}>Ildan Sharifullin</p>
                 <p className={styles.infoBlock__description}>Front-end developer</p>
-                <input type="button" className={styles.infoBlock__button} value="About me"/>
+                <input type="button" className={styles.infoBlock__button} onClick={() => setInfoSectionActive(prev => !prev)} value="About me"/>
             </div>
             <div className={styles.socialBlock}>
                 <a href="https://t.me/d1sinterested" target="_blank" rel="noreferrer" ><i className="fab fa-telegram-plane"/></a>

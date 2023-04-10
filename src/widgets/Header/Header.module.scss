@@ -101,10 +101,10 @@
   display: flex;
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   background: linear-gradient(270deg,#235aa6,#101b3b);
-  z-index: 5;
+  z-index: 100;
   overflow: hidden;
 
   &__nav {

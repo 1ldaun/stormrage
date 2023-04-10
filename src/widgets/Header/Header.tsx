@@ -18,7 +18,7 @@ const Header = ({setInfoSectionActive}: HeaderProps) => {
                 <img src={logoImg} className={styles.logo} alt="logo"/>
                 <ul className={styles.navigation}>
                     <li className={styles.navigation__item}>Works</li>
-                    <li className={styles.navigation__item} onClick={() => setInfoSectionActive(true)}>About me</li>
+                    <li className={styles.navigation__item} onClick={() => setInfoSectionActive(true)} data-testid='aboutMe'>About me</li>
                 </ul>
                 <div className={styles.mobileNavigation} onClick={mobileMenuHandler}>
                     <span className={cx(styles.mobileNavigation__item, styles.mobileNavigation__item_top)}/>
@@ -30,7 +30,7 @@ const Header = ({setInfoSectionActive}: HeaderProps) => {
                 <ul className={styles.mobileScreen__nav}>
                     <li className={styles.mobileScreen__nav__item}>Home</li>
                     <li className={styles.mobileScreen__nav__item}>Works</li>
-                    <li className={styles.mobileScreen__nav__item} onClick={() => {mobileMenuHandler(); setInfoSectionActive(true);}}>About me</li>
+                    <li className={styles.mobileScreen__nav__item} onClick={() => {mobileMenuHandler(); setInfoSectionActive(true);}} data-testid='mobileAboutMe'>About me</li>
                 </ul>
                 <div className={styles.mobileScreen__icons}>
                     <a href="https://t.me/d1sinterested" target="_blank" rel="noreferrer" ><i className="fab fa-telegram-plane"/></a>

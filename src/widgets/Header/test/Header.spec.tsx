@@ -4,9 +4,13 @@ import Adapter from '@cfaester/enzyme-adapter-react-18';
 
 configure({ adapter: new Adapter() });
 
+const HeaderProps = {
+    setInfoSectionActive: jest.fn(),
+}
+
 describe("<Header/>", () => {
     it("Rendering", () => {
-        const wrapper = mount(<Header setInfoSectionActive={jest.fn()}/>);
+        const wrapper = mount(<Header {...HeaderProps} />);
 
         const navigation = wrapper.find(".navigation");
         expect(navigation.exists()).toBeTruthy();
@@ -24,7 +28,7 @@ describe("<Header/>", () => {
     });
 
     it("Display mobile screen", () => {
-        const wrapper = mount(<Header setInfoSectionActive={jest.fn()}/>);
+        const wrapper = mount(<Header {...HeaderProps} />);
         expect(wrapper.find(".mobileScreen").exists()).toBeFalsy();     //  mobileScreen hidden
 
         const navButton = wrapper.find(".mobileNavigation");
@@ -32,5 +36,29 @@ describe("<Header/>", () => {
         navButton.simulate('click');
 
         expect(wrapper.find(".mobileScreen").exists()).toBeTruthy();    //  mobileScreen displayed
+    })
+
+    it("Display InfoSection", () => {
+        const wrapper = mount(<Header {...HeaderProps} />);
+        expect(wrapper.find(".mobileScreen").exists()).toBeFalsy();
+
+        const navButton = wrapper.find(".mobileNavigation");
+        expect(navButton.exists()).toBeTruthy();
+        navButton.simulate('click');
+
+        expect(wrapper.find(".mobileScreen").exists()).toBeTruthy();    //  mobileScreen displayed
+        expect(HeaderProps.setInfoSectionActive).toBeCalledTimes(0);
+
+        const infoButton = wrapper.find("[data-testid='aboutMe']");
+        expect(infoButton.exists()).toBeTruthy();
+        infoButton.simulate('click');
+
+        expect(HeaderProps.setInfoSectionActive).toBeCalledTimes(1);
+
+        const infoMobileButton = wrapper.find("[data-testid='mobileAboutMe']");
+        expect(infoMobileButton.exists()).toBeTruthy();
+        infoMobileButton.simulate('click');
+
+        expect(HeaderProps.setInfoSectionActive).toBeCalledTimes(2);
     })
 })

@@ -17,6 +17,24 @@ const InfoSection = ({isActive, setIsActive}: InfoSectionProps) => {
 
     return (
         <div className={cx(styles.wrapper, isActive ? styles.wrapper_active : "")}>
+            <div className={cx(styles.rightBlock, isActive ? styles.rightBlock_active : "")}>
+                <div className={styles.wrapper__close} onClick={infoSectionHandler}>
+                    <i className="fa-solid fa-xmark"/>
+                </div>
+                <h3 className={styles.rightBlock__title}>Skills</h3>
+
+                <h4 className={styles.rightBlock__subtitle}>Web Development</h4>
+                <p className={styles.rightBlock__text}>JS, TS, React.js, Angular, Unit Testing (Jest)</p>
+
+                <h4 className={styles.rightBlock__subtitle}>UI\UX Design</h4>
+                <p className={styles.rightBlock__text}>Photoshop, Illustrator, XD, Figma</p>
+
+                <h4 className={styles.rightBlock__subtitle}>Team tools</h4>
+                <p className={styles.rightBlock__text}>Gitlab, Jira, Agile</p>
+
+                <h3 className={styles.rightBlock__title}>Let’s talk</h3>
+                <p className={styles.rightBlock__text}>New projects, freelance inquiry or even a coffee.</p>
+            </div>
             <div className={cx(styles.leftBlock, isActive ? styles.leftBlock_active : "")}>
                 <p className={styles.leftBlock__backgroundText}>About</p>
                 <h3 className={styles.leftBlock__title}>About Me</h3>
@@ -46,24 +64,6 @@ const InfoSection = ({isActive, setIsActive}: InfoSectionProps) => {
                         <JsImg/>
                     </li>
                 </ul>
-            </div>
-            <div className={cx(styles.rightBlock, isActive ? styles.rightBlock_active : "")}>
-                <div className={styles.wrapper__close} onClick={infoSectionHandler}>
-                    <i className="fa-solid fa-xmark"/>
-                </div>
-                <h3 className={styles.rightBlock__title}>Skills</h3>
-
-                <h4 className={styles.rightBlock__subtitle}>Web Development</h4>
-                <p className={styles.rightBlock__text}>JS, TS, React.js, Angular, Unit Testing (Jest)</p>
-
-                <h4 className={styles.rightBlock__subtitle}>UI\UX Design</h4>
-                <p className={styles.rightBlock__text}>Photoshop, Illustrator, XD, Figma</p>
-
-                <h4 className={styles.rightBlock__subtitle}>Team tools</h4>
-                <p className={styles.rightBlock__text}>Gitlab, Jira, Agile</p>
-
-                <h3 className={styles.rightBlock__title}>Let’s talk</h3>
-                <p className={styles.rightBlock__text}>New projects, freelance inquiry or even a coffee.</p>
             </div>
         </div>
     );

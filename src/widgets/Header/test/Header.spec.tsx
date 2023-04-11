@@ -17,11 +17,11 @@ describe("<Header/>", () => {
         expect(navigation.children().length).toEqual(2);
 
         const mobileNavigation = wrapper.find(".mobileNavigation");
-        expect(mobileNavigation.exists()).toBeTruthy();
+        expect(mobileNavigation.hasClass(".mobileScreen_active")).toBeFalsy();
         expect(mobileNavigation.children().length).toEqual(3);
 
         const mobileScreen = wrapper.find(".mobileScreen");
-        expect(mobileScreen.exists()).toBeFalsy();     // mobileScreen hidden
+        expect(mobileScreen.exists()).toBeTruthy();     // mobileScreen hidden
 
         const navButton = wrapper.find(".mobileNavigation");
         expect(navButton.exists()).toBeTruthy();
@@ -29,7 +29,7 @@ describe("<Header/>", () => {
 
     it("Display mobile screen", () => {
         const wrapper = mount(<Header {...HeaderProps} />);
-        expect(wrapper.find(".mobileScreen").exists()).toBeFalsy();     //  mobileScreen hidden
+        expect(wrapper.find(".mobileScreen").hasClass(".mobileScreen_active")).toBeFalsy();     //  mobileScreen hidden
 
         const navButton = wrapper.find(".mobileNavigation");
         expect(navButton.exists()).toBeTruthy();
@@ -40,7 +40,7 @@ describe("<Header/>", () => {
 
     it("Display InfoSection", () => {
         const wrapper = mount(<Header {...HeaderProps} />);
-        expect(wrapper.find(".mobileScreen").exists()).toBeFalsy();
+        expect(wrapper.find(".mobileScreen").hasClass(".mobileScreen_active")).toBeFalsy();
 
         const navButton = wrapper.find(".mobileNavigation");
         expect(navButton.exists()).toBeTruthy();

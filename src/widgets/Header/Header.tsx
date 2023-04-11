@@ -26,7 +26,7 @@ const Header = ({setInfoSectionActive}: HeaderProps) => {
                     <span className={cx(styles.mobileNavigation__item, styles.mobileNavigation__item_bottom)}/>
                 </div>
             </div>
-            {isMobileMenuActive && <div className={styles.mobileScreen}>
+            <div className={cx(styles.mobileScreen, isMobileMenuActive ? styles.mobileScreen_active : "")}>
                 <ul className={styles.mobileScreen__nav}>
                     <li className={styles.mobileScreen__nav__item}>Home</li>
                     <li className={styles.mobileScreen__nav__item}>Works</li>
@@ -42,7 +42,6 @@ const Header = ({setInfoSectionActive}: HeaderProps) => {
                     <i className="fa-solid fa-xmark"/>
                 </div>
             </div>
-            }
         </>
     );
 };

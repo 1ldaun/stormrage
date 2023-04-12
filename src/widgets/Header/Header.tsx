@@ -2,23 +2,27 @@ import React, {useState} from 'react';
 import cx from "classnames"
 import logoImg from '../../shared/img/logo-grey2.png'
 import styles from './Header.module.scss'
+import {useTranslation} from "react-i18next";
 
 export interface HeaderProps {
     setInfoSectionActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Header = ({setInfoSectionActive}: HeaderProps) => {
-    const [isMobileMenuActive, setIsMobileMenuActive] = useState(false)
+    const { t, i18n } = useTranslation();
+    const [isMobileMenuActive, setIsMobileMenuActive] = useState(false);
 
     const mobileMenuHandler = () => setIsMobileMenuActive(prev => !prev);
+
+    const changeLangHandler = () =>  i18n.changeLanguage(i18n.language === "en" ? "ru" : "en" );
 
     return (
         <>
             <div className={styles.wrapper}>
                 <img src={logoImg} className={styles.logo} alt="logo"/>
                 <ul className={styles.navigation}>
-                    <li className={styles.navigation__item}>Works</li>
-                    <li className={styles.navigation__item} onClick={() => setInfoSectionActive(true)} data-testid='aboutMe'>About me</li>
+                    <li className={styles.navigation__item}>{t("header.works")}</li>
+                    <li className={styles.navigation__item} onClick={() => setInfoSectionActive(true)} data-testid='aboutMe'>{t("header.aboutMe")}</li>
                 </ul>
                 <div className={styles.mobileNavigation} onClick={mobileMenuHandler}>
                     <span className={cx(styles.mobileNavigation__item, styles.mobileNavigation__item_top)}/>
@@ -28,9 +32,9 @@ const Header = ({setInfoSectionActive}: HeaderProps) => {
             </div>
             <div className={cx(styles.mobileScreen, isMobileMenuActive ? styles.mobileScreen_active : "")}>
                 <ul className={styles.mobileScreen__nav}>
-                    <li className={styles.mobileScreen__nav__item}>Home</li>
-                    <li className={styles.mobileScreen__nav__item}>Works</li>
-                    <li className={styles.mobileScreen__nav__item} onClick={() => {mobileMenuHandler(); setInfoSectionActive(true);}} data-testid='mobileAboutMe'>About me</li>
+                    <li className={styles.mobileScreen__nav__item}>{t("mobileHeader.home")}</li>
+                    <li className={styles.mobileScreen__nav__item}>{t("mobileHeader.works")}</li>
+                    <li className={styles.mobileScreen__nav__item} onClick={() => {mobileMenuHandler(); setInfoSectionActive(true);}} data-testid='mobileAboutMe'>{t("mobileHeader.aboutMe")}</li>
                 </ul>
                 <div className={styles.mobileScreen__icons}>
                     <a href="https://t.me/d1sinterested" target="_blank" rel="noreferrer" ><i className="fab fa-telegram-plane"/></a>
@@ -41,6 +45,9 @@ const Header = ({setInfoSectionActive}: HeaderProps) => {
                 <div className={styles.mobileScreen__close} onClick={mobileMenuHandler}>
                     <i className="fa-solid fa-xmark"/>
                 </div>
+            </div>
+            <div className={styles.changeLang} onClick={changeLangHandler}>
+                {i18n.language === "en" ? "RU" : "EN"}
             </div>
         </>
     );

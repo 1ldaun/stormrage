@@ -54,6 +54,7 @@
     "@cfaester/enzyme-adapter-react-18": "^0.7.0",
     "@types/enzyme": "^3.10.12",
     "@types/react-helmet": "^6.1.6",
+    "@types/react-scroll": "^1.8.6",
     "babel-jest": "^29.5.0",
     "enzyme": "^3.11.0",
     "jest": "^27.5.1",

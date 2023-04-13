@@ -13,7 +13,7 @@ const Case = (props: CaseProps) => {
     const {id, url, subtitles, title, imageUrl} = props;
 
     return (
-        <a href={url} target="_blank" className={styles.wrapper} style={{backgroundImage: `url("${imageUrl}")`}}>
+        <a href={url} target="_blank" rel="noreferrer" className={styles.wrapper} style={{backgroundImage: `url("${imageUrl}")`}}>
             <div className={styles.mask}/>
             <div className={styles.numberBlock}>
                 <div className={styles.numberBlock__back}>{id}</div>

@@ -9,7 +9,7 @@ const WorksSection = () => {
     const { t } = useTranslation();
 
     return (
-        <div className={styles.wrapper}>
+        <div id="works" className={styles.wrapper}>
             <h2 className={styles.wrapper__title}>{t("worksSection.title")}</h2>
             <h2 className={styles.wrapper__subtitle}>{t("worksSection.subtitle")}</h2>
             <div className={styles.wrapper__worksList}>

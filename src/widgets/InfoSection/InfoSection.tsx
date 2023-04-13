@@ -5,6 +5,7 @@ import {ReactComponent as JsImg} from "../../shared/img/js.svg";
 import {ReactComponent as CssImg} from "../../shared/img/css.svg";
 import {ReactComponent as UIImg} from "../../shared/img/ui.svg";
 import cx from "classnames";
+import {skillsList} from "../../shared/mocks/SkillsListMock";
 
 export interface InfoSectionProps {
     isActive: boolean;
@@ -12,7 +13,6 @@ export interface InfoSectionProps {
 }
 
 const InfoSection = ({isActive, setIsActive}: InfoSectionProps) => {
-
     const infoSectionHandler = () => setIsActive(prev => !prev);
 
     return (
@@ -23,14 +23,12 @@ const InfoSection = ({isActive, setIsActive}: InfoSectionProps) => {
                 </div>
                 <h3 className={styles.rightBlock__title}>Skills</h3>
 
-                <h4 className={styles.rightBlock__subtitle}>Web Development</h4>
-                <p className={styles.rightBlock__text}>JS, TS, React.js, Angular, Unit Testing (Jest)</p>
-
-                <h4 className={styles.rightBlock__subtitle}>UI\UX Design</h4>
-                <p className={styles.rightBlock__text}>Photoshop, Illustrator, XD, Figma</p>
-
-                <h4 className={styles.rightBlock__subtitle}>Team tools</h4>
-                <p className={styles.rightBlock__text}>Gitlab, Jira, Agile</p>
+                {skillsList.map(skillItem => (
+                    <>
+                        <h4 className={styles.rightBlock__subtitle}>{skillItem.title}</h4>
+                        <p className={styles.rightBlock__text}>{skillItem.list}</p>
+                    </>
+                ))}
 
                 <h3 className={styles.rightBlock__title}>Let’s talk</h3>
                 <p className={styles.rightBlock__text}>New projects, freelance inquiry or even a coffee.</p>

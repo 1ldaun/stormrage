@@ -1,6 +1,6 @@
 {
-  "short_name": "Ildan-Dev",
-  "name": "Ildan Sharifullin - Front-end developer",
+  "short_name": "Ildan Sharifullin - E-Portfolio",
+  "name": "I'm Ildan Sharifullin, a 20-year-old Front-end developer. I like to create smart user interface and imagine useful interaction, developing rich web experiences & web applications and interest templates.",
   "icons": [
     {
       "src": "logo260.png",
@@ -15,6 +15,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff"
 }

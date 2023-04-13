@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
-import MainPage from "./pages/MainPage/MainPage";
-
 import './i18n';
+import App from "./App";
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <MainPage />
+      <App/>
   </React.StrictMode>
 );

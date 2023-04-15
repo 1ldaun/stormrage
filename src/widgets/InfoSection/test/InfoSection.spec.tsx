@@ -22,4 +22,25 @@ describe("<InfoSection/>", () => {
         const closeButton = wrapper.find(".wrapper__close");
         expect(closeButton.exists()).toBeTruthy();
     });
+
+    it("Check active state", () => {
+        const wrapper = mount(<InfoSection {...InfoSectionProps} />);
+
+        expect(wrapper.hasClass(".wrapper_active")).toBeFalsy();
+
+        const leftBlock = wrapper.find(".leftBlock");
+        expect(leftBlock.exists()).toBeTruthy();
+        expect(leftBlock.hasClass(".leftBlock_active")).toBeFalsy();
+
+
+        const infoSection = mount(<InfoSection isActive={true} setIsActive={jest.fn()} />);
+
+        const wrapperActive = infoSection.find(".wrapper");
+
+        expect(wrapperActive.hasClass(".wrapper_active")).toBeTruthy();
+
+        const leftBlockActive = wrapperActive.find(".leftBlock");
+        expect(leftBlockActive.exists()).toBeTruthy();
+        expect(leftBlockActive.hasClass(".leftBlock_active")).toBeTruthy();
+    });
 })

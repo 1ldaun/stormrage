@@ -29,7 +29,7 @@ describe("<TopSection/>", () => {
         expect(wrapper.exists()).toBeTruthy();
 
         const button = wrapper.find(".infoBlock__button");
-        expect(button.exists());
+        expect(button.exists()).toBeTruthy();
 
         const isRussianLanguageMatch = i18n.language === "ru" && button.hasClass("infoBlock__button_ruFont");
         const isEnglishLanguageMatch = i18n.language === "en" && !button.hasClass("infoBlock__button_ruFont");

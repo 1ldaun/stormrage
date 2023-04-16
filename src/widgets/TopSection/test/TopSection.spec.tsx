@@ -5,9 +5,13 @@ import i18n from "../../../i18n";
 
 configure({ adapter: new Adapter() });
 
+const TopSectionProps = {
+    setInfoSectionActive: jest.fn(),
+}
+
 describe("<TopSection/>", () => {
     it("Rendering", () => {
-        const wrapper = mount(<TopSection setInfoSectionActive={jest.fn()}/>);
+        const wrapper = mount(<TopSection {...TopSectionProps} />);
         expect(wrapper.exists()).toBeTruthy();
 
         const background = wrapper.find(".background");
@@ -20,8 +24,8 @@ describe("<TopSection/>", () => {
         expect(socialBlock.exists()).toBeTruthy();
     });
 
-    it("Language check", () => {
-        const wrapper = mount(<TopSection setInfoSectionActive={jest.fn()}/>);
+    it("Button check", () => {
+        const wrapper = mount(<TopSection {...TopSectionProps} />);
         expect(wrapper.exists()).toBeTruthy();
 
         const button = wrapper.find(".infoBlock__button");
@@ -30,6 +34,10 @@ describe("<TopSection/>", () => {
         const isRussianLanguageMatch = i18n.language === "ru" && button.hasClass("infoBlock__button_ruFont");
         const isEnglishLanguageMatch = i18n.language === "en" && !button.hasClass("infoBlock__button_ruFont");
         expect(isRussianLanguageMatch || isEnglishLanguageMatch).toBeTruthy();
+
+        expect(TopSectionProps.setInfoSectionActive).toBeCalledTimes(0);
+        button.simulate("click");
+        expect(TopSectionProps.setInfoSectionActive).toBeCalledTimes(1);
     });
 
 })

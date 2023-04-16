@@ -33,14 +33,17 @@ describe("<InfoSection/>", () => {
         expect(leftBlock.hasClass(".leftBlock_active")).toBeFalsy();
 
 
-        const infoSection = mount(<InfoSection isActive={true} setIsActive={jest.fn()} />);
+        const infoSection = mount(<InfoSection {...InfoSectionProps} isActive={true} />);
 
         const wrapperActive = infoSection.find(".wrapper");
-
-        expect(wrapperActive.hasClass(".wrapper_active")).toBeTruthy();
+        expect(wrapperActive.hasClass("wrapper_active")).toBeTruthy();
 
         const leftBlockActive = wrapperActive.find(".leftBlock");
         expect(leftBlockActive.exists()).toBeTruthy();
-        expect(leftBlockActive.hasClass(".leftBlock_active")).toBeTruthy();
+        expect(leftBlockActive.hasClass("leftBlock_active")).toBeTruthy();
+
+        const rightBlockActive = wrapperActive.find(".rightBlock");
+        expect(rightBlockActive.exists()).toBeTruthy();
+        expect(rightBlockActive.hasClass("rightBlock_active")).toBeTruthy();
     });
 })

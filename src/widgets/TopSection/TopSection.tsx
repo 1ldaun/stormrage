@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import styles from "./TopSection.module.scss"
 import bgLogo from "../../shared/img/logo512.png"
 import {useTranslation} from "react-i18next";
@@ -15,16 +15,19 @@ const WRAPPER_ID = "TopSection";
 const TopSection = ({setInfoSectionActive}: TopSectionProps) => {
     const { t, i18n } = useTranslation();
     const { theme } = useTheme();
+    let canvasElement = useRef<HTMLCanvasElement>();
 
     useEffect(() => {
         const wrapper = document.getElementById(WRAPPER_ID);
-        const canvasElement = document.querySelector("canvas");
+        console.log(theme);
+        if (canvasElement.current) {
+            canvasElement.current.remove()
+            init(false);
+        }
 
         if (theme === ThemeEnum.dark && wrapper) {
-            if (canvasElement)
-                wrapper.removeChild(canvasElement);
-            wrapper.appendChild(canvas);
-            init();
+            canvasElement.current = wrapper.appendChild(canvas);
+            init(true);
         }
     }, [theme])
 

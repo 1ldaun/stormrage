@@ -111,9 +111,13 @@ const loop = () => {
     requestAnimationFrame(loop);
 }
 
-export const init = () => {
-    for(let i = 0; i < properties.particleCount; i++){
-        particles.push(new Particle());
+export const init = (active: boolean) => {
+    if (active) {
+        for (let i = 0; i < properties.particleCount; i++) {
+            particles.push(new Particle());
+        }
+        loop();
+    } else {
+        particles.length = 0;
     }
-    loop();
 }

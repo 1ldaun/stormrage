@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 import cx from "classnames"
-import logoImg from '../../shared/img/logo-grey2.png'
+import logoImg from '../../shared/img/logo-grey.png'
+import lightLogoImg from '../../shared/img/logo-white.png'
 import styles from './Header.module.scss'
 import {useTranslation} from "react-i18next";
 import { Link } from "react-scroll";
+import {ThemeEnum, useTheme} from "../../processes/Theme/useTheme";
+import {ReactComponent as HeartSwitcherImg} from "../../shared/img/heartSwitcher.svg"
 
 export interface HeaderProps {
     setInfoSectionActive: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,16 +14,19 @@ export interface HeaderProps {
 
 const Header = ({setInfoSectionActive}: HeaderProps) => {
     const { t, i18n } = useTranslation();
+    const { theme, setTheme } = useTheme();
     const [isMobileMenuActive, setIsMobileMenuActive] = useState(false);
 
     const mobileMenuHandler = () => setIsMobileMenuActive(prev => !prev);
 
     const changeLangHandler = () =>  i18n.changeLanguage(i18n.language === "en" ? "ru" : "en" );
 
+    const changeThemeHandler = () =>  setTheme(theme === ThemeEnum.default ? ThemeEnum.dark : ThemeEnum.default );
+
     return (
         <>
             <div className={styles.wrapper}>
-                <img src={logoImg} className={styles.logo} alt="logo"/>
+                <img src={theme === ThemeEnum.default ? logoImg : lightLogoImg} className={styles.logo} alt="logo"/>
                 <ul className={styles.navigation}>
                     <li className={styles.navigation__item}>
                         <Link to="works"
@@ -64,6 +70,12 @@ const Header = ({setInfoSectionActive}: HeaderProps) => {
             </div>
             <div className={styles.changeLang} onClick={changeLangHandler}>
                 {i18n.language === "en" ? "RU" : "EN"}
+            </div>
+            <div className={styles.heartSwitcher}>
+                <label className={styles.heartSwitcher__label}>
+                    <input type="checkbox" checked={theme === ThemeEnum.dark} onChange={changeThemeHandler}/>
+                    <HeartSwitcherImg/>
+                </label>
             </div>
         </>
     );

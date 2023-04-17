@@ -9,7 +9,7 @@ const isDarkTheme = window?.matchMedia("(prefers-color-scheme: dark)").matches;
 const prefersColor = isDarkTheme ? ThemeEnum.dark : ThemeEnum.default;
 
 export const useTheme = () => {
-    const [theme, setTheme] = useState(localStorage.getItem("app-theme") || prefersColor);
+    const [theme, setTheme] = useState<ThemeEnum>(localStorage.getItem("app-theme") as ThemeEnum || prefersColor);
 
     useLayoutEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);

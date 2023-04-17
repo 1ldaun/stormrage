@@ -1,9 +1,19 @@
-:root {
+:root[data-theme="default"] {
   --black-1: #4c4f65;
   --black-2: #4a4a4a;
   --gray-1: #dbdce4;
   --gray-2: #f3f3f3;
   --golden: #b19386;
   --snowy: #fff;
+  --accent: #f06449;
+}
+
+:root[data-theme="dark"] {
+  --black-1: #dbdce4;
+  --black-2: #f3f3f3;
+  --gray-1: #4c4f65;
+  --gray-2: #4a4a4a;
+  --golden: #b19386;
+  --snowy: #000;
   --accent: #f06449;
 }

@@ -1,20 +1,39 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from "./TopSection.module.scss"
 import bgLogo from "../../shared/img/logo512.png"
 import {useTranslation} from "react-i18next";
 import cx from "classnames";
+import {ThemeEnum, useTheme} from "../../processes/Theme/useTheme";
+import {canvas, init} from "./model/darkThemeUtils";
 
 export interface TopSectionProps {
     setInfoSectionActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+const WRAPPER_ID = "TopSection";
+
 const TopSection = ({setInfoSectionActive}: TopSectionProps) => {
     const { t, i18n } = useTranslation();
+    const { theme } = useTheme();
+
+    useEffect(() => {
+        const wrapper = document.getElementById(WRAPPER_ID);
+        const canvasElement = document.querySelector("canvas");
+
+        if (theme === ThemeEnum.dark && wrapper) {
+            if (canvasElement)
+                wrapper.removeChild(canvasElement);
+            wrapper.appendChild(canvas);
+            init();
+        }
+    }, [theme])
 
     return (
-        <div className={styles.wrapper}>
+        <div id={WRAPPER_ID} className={styles.wrapper}>
             <div className={styles.background}>
-                <img src={bgLogo} alt="background"/>
+                {theme === ThemeEnum.default &&
+                    <img src={bgLogo} alt="background"/>
+                }
             </div>
             <div className={styles.infoBlock}>
                 <p className={styles.infoBlock__name}>{t("topSection.name")}</p>

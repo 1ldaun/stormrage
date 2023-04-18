@@ -1,11 +1,13 @@
 import Header from "../Header";
 import {configure, mount} from "enzyme";
 import Adapter from '@cfaester/enzyme-adapter-react-18';
+import {ThemeEnum} from "../../../processes/Theme/useTheme";
 
 configure({ adapter: new Adapter() });
 
 const HeaderProps = {
     setInfoSectionActive: jest.fn(),
+    theme: ThemeEnum.default,
 }
 
 describe("<Header/>", () => {

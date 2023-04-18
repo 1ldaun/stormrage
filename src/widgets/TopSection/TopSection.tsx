@@ -3,31 +3,30 @@ import styles from "./TopSection.module.scss"
 import bgLogo from "../../shared/img/logo512.png"
 import {useTranslation} from "react-i18next";
 import cx from "classnames";
-import {ThemeEnum, useTheme} from "../../processes/Theme/useTheme";
-import {canvas, init} from "./model/darkThemeUtils";
+import {ThemeEnum} from "../../processes/Theme/useTheme";
+import {canvas, initCanvas} from "./model/darkThemeUtils";
 
 export interface TopSectionProps {
     setInfoSectionActive: React.Dispatch<React.SetStateAction<boolean>>;
+    theme: ThemeEnum;
 }
 
 const WRAPPER_ID = "TopSection";
 
-const TopSection = ({setInfoSectionActive}: TopSectionProps) => {
+const TopSection = ({setInfoSectionActive, theme}: TopSectionProps) => {
     const { t, i18n } = useTranslation();
-    const { theme } = useTheme();
     let canvasElement = useRef<HTMLCanvasElement>();
 
     useEffect(() => {
         const wrapper = document.getElementById(WRAPPER_ID);
-        console.log(theme);
         if (canvasElement.current) {
             canvasElement.current.remove()
-            init(false);
+            initCanvas(false);
         }
 
         if (theme === ThemeEnum.dark && wrapper) {
             canvasElement.current = wrapper.appendChild(canvas);
-            init(true);
+            initCanvas(true);
         }
     }, [theme])
 

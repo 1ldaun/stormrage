@@ -2,11 +2,13 @@ import {configure, mount} from "enzyme";
 import Adapter from '@cfaester/enzyme-adapter-react-18';
 import TopSection from "../TopSection";
 import i18n from "../../../i18n";
+import {ThemeEnum} from "../../../processes/Theme/useTheme";
 
 configure({ adapter: new Adapter() });
 
 const TopSectionProps = {
     setInfoSectionActive: jest.fn(),
+    theme: ThemeEnum.default,
 }
 
 describe("<TopSection/>", () => {

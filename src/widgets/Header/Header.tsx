@@ -5,23 +5,18 @@ import lightLogoImg from '../../shared/img/logo-white.png'
 import styles from './Header.module.scss'
 import {useTranslation} from "react-i18next";
 import { Link } from "react-scroll";
-import {ThemeEnum, useTheme} from "../../processes/Theme/useTheme";
-import {ReactComponent as HeartSwitcherImg} from "../../shared/img/heartSwitcher.svg"
+import { ThemeEnum } from "../../processes/Theme/useTheme";
 
 export interface HeaderProps {
     setInfoSectionActive: React.Dispatch<React.SetStateAction<boolean>>;
+    theme: ThemeEnum;
 }
 
-const Header = ({setInfoSectionActive}: HeaderProps) => {
-    const { t, i18n } = useTranslation();
-    const { theme, setTheme } = useTheme();
+const Header = ({setInfoSectionActive, theme}: HeaderProps) => {
+    const { t } = useTranslation();
     const [isMobileMenuActive, setIsMobileMenuActive] = useState(false);
 
     const mobileMenuHandler = () => setIsMobileMenuActive(prev => !prev);
-
-    const changeLangHandler = () =>  i18n.changeLanguage(i18n.language === "en" ? "ru" : "en" );
-
-    const changeThemeHandler = () =>  setTheme(theme === ThemeEnum.default ? ThemeEnum.dark : ThemeEnum.default );
 
     return (
         <>
@@ -67,15 +62,6 @@ const Header = ({setInfoSectionActive}: HeaderProps) => {
                 <div className={styles.mobileScreen__close} onClick={mobileMenuHandler}>
                     <i className="fa-solid fa-xmark"/>
                 </div>
-            </div>
-            <div className={styles.changeLang} onClick={changeLangHandler}>
-                {i18n.language === "en" ? "RU" : "EN"}
-            </div>
-            <div className={styles.heartSwitcher}>
-                <label className={styles.heartSwitcher__label}>
-                    <input type="checkbox" checked={theme === ThemeEnum.dark} onChange={changeThemeHandler}/>
-                    <HeartSwitcherImg/>
-                </label>
             </div>
         </>
     );

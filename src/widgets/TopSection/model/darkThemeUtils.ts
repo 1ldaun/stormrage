@@ -7,11 +7,12 @@ export let canvas = document.createElement('canvas'),
         bgColor             : 'rgba(17, 17, 19, 1)',
         particleColor       : 'rgba(255, 40, 40, 1)',
         particleRadius      : 3,
-        particleCount       : 30,
-        particleMaxVelocity : 0.15,
+        particleCount       : Math.round(0.00004127525 * window.innerWidth * window.innerHeight),
+        particleMaxVelocity : 0.25,
         lineLength          : 150,
-        particleLife        : 15,
+        particleLife        : 20,
     };
+console.log(properties.particleCount, window.innerWidth, window.innerHeight);
 
 window.onresize = () => {
     w = canvas.width = window.innerWidth;
@@ -104,20 +105,29 @@ const reDrawParticles = () => {
     }
 }
 
+let isLoopActive = false;
+let loopAnimationFrame: number;
+
 const loop = () => {
-    reDrawBackground();
-    reDrawParticles();
-    drawLines();
-    requestAnimationFrame(loop);
+    if (!isLoopActive && !!loopAnimationFrame)
+        cancelAnimationFrame(loopAnimationFrame);
+    else {
+        reDrawBackground();
+        reDrawParticles();
+        drawLines();
+        loopAnimationFrame = requestAnimationFrame(loop);
+    }
 }
 
-export const init = (active: boolean) => {
+export const initCanvas = (active: boolean) => {
     if (active) {
         for (let i = 0; i < properties.particleCount; i++) {
             particles.push(new Particle());
         }
+        isLoopActive = true;
         loop();
     } else {
+        isLoopActive = false;
         particles.length = 0;
     }
 }

@@ -7,13 +7,14 @@ import {ThemeEnum} from "../../processes/Theme/useTheme";
 import {canvas, initCanvas} from "./model/darkThemeUtils";
 
 export interface TopSectionProps {
-    setInfoSectionActive: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsInfoSectionActive: React.Dispatch<React.SetStateAction<boolean>>;
+    isInfoSectionActive: boolean;
     theme: ThemeEnum;
 }
 
 const WRAPPER_ID = "TopSection";
 
-const TopSection = ({setInfoSectionActive, theme}: TopSectionProps) => {
+const TopSection = ({setIsInfoSectionActive, isInfoSectionActive, theme}: TopSectionProps) => {
     const { t, i18n } = useTranslation();
     let canvasElement = useRef<HTMLCanvasElement>();
 
@@ -40,9 +41,9 @@ const TopSection = ({setInfoSectionActive, theme}: TopSectionProps) => {
             <div className={styles.infoBlock}>
                 <p className={styles.infoBlock__name}>{t("topSection.name")}</p>
                 <p className={styles.infoBlock__description}>{t("topSection.description")}</p>
-                <input type="button" className={cx(styles.infoBlock__button, i18n.language === "ru" ? styles.infoBlock__button_ruFont : "")} onClick={() => setInfoSectionActive(prev => !prev)} value={t("topSection.button") || ""}/>
+                <input type="button" className={cx(styles.infoBlock__button, i18n.language === "ru" ? styles.infoBlock__button_ruFont : "")} onClick={() => setIsInfoSectionActive(prev => !prev)} value={t("topSection.button") || ""}/>
             </div>
-            <div className={styles.socialBlock}>
+            <div className={cx(styles.socialBlock, isInfoSectionActive ? styles.socialBlock_hidden : "")}>
                 <a href="https://t.me/d1sinterested" target="_blank" rel="noreferrer" ><i className="fab fa-telegram-plane"/></a>
                 <a href="https://vk.com/dis1nterested" target="_blank" rel="noreferrer" ><i className="fa-brands fa-vk"/></a>
                 <a href="mailto:sharfull33@gmail.ru" target="_blank" rel="noreferrer" ><i className="far fa-envelope"/></a>

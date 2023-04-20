@@ -32,6 +32,13 @@ const InfoSection = ({isActive, setIsActive}: InfoSectionProps) => {
 
                 <h3 className={styles.rightBlock__title}>Let’s talk</h3>
                 <p className={styles.rightBlock__text}>New projects, freelance inquiry or even a coffee.</p>
+
+                <div className={styles.rightBlock__socialBlock}>
+                    <a href="https://t.me/d1sinterested" target="_blank" rel="noreferrer" ><i className="fab fa-telegram-plane"/></a>
+                    <a href="https://vk.com/dis1nterested" target="_blank" rel="noreferrer" ><i className="fa-brands fa-vk"/></a>
+                    <a href="mailto:sharfull33@gmail.ru" target="_blank" rel="noreferrer" ><i className="far fa-envelope"/></a>
+                    <a href="https://github.com/1ldaun" target="_blank" rel="noreferrer" ><i className="fa-brands fa-github"></i></a>
+                </div>
             </div>
             <div className={cx(styles.leftBlock, isActive ? styles.leftBlock_active : "")}>
                 <p className={styles.leftBlock__backgroundText}>About</p>

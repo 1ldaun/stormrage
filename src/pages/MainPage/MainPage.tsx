@@ -19,7 +19,7 @@ const MainPage = () => {
             <div className={cx(styles.wrapper, i18n.language === "ru" ? styles.wrapper_rusFont : "")}>
                 <AppSettings theme={theme} setTheme={setTheme}/>
                 <Header setInfoSectionActive={setIsInfoSectionActive} theme={theme}/>
-                <TopSection setInfoSectionActive={setIsInfoSectionActive} theme={theme}/>
+                <TopSection isInfoSectionActive={isInfoSectionActive} setIsInfoSectionActive={setIsInfoSectionActive} theme={theme}/>
                 <WorksSection/>
                 <InfoSection isActive={isInfoSectionActive} setIsActive={setIsInfoSectionActive}/>
                 <Footer/>

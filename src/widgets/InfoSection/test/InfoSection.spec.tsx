@@ -19,6 +19,10 @@ describe("<InfoSection/>", () => {
         const leftBlock = wrapper.find(".leftBlock");
         expect(leftBlock.exists()).toBeTruthy();
 
+        const socialBlock = rightBlock.find(".rightBlock__socialBlock");
+        expect(socialBlock.exists()).toBeTruthy();
+        expect(socialBlock.children().length).toEqual(4);
+
         const closeButton = wrapper.find(".wrapper__close");
         expect(closeButton.exists()).toBeTruthy();
     });

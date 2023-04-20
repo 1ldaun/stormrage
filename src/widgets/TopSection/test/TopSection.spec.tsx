@@ -7,7 +7,8 @@ import {ThemeEnum} from "../../../processes/Theme/useTheme";
 configure({ adapter: new Adapter() });
 
 const TopSectionProps = {
-    setInfoSectionActive: jest.fn(),
+    setIsInfoSectionActive: jest.fn(),
+    isInfoSectionActive: false,
     theme: ThemeEnum.default,
 }
 
@@ -37,9 +38,9 @@ describe("<TopSection/>", () => {
         const isEnglishLanguageMatch = i18n.language === "en" && !button.hasClass("infoBlock__button_ruFont");
         expect(isRussianLanguageMatch || isEnglishLanguageMatch).toBeTruthy();
 
-        expect(TopSectionProps.setInfoSectionActive).toBeCalledTimes(0);
+        expect(TopSectionProps.setIsInfoSectionActive).toBeCalledTimes(0);
         button.simulate("click");
-        expect(TopSectionProps.setInfoSectionActive).toBeCalledTimes(1);
+        expect(TopSectionProps.setIsInfoSectionActive).toBeCalledTimes(1);
     });
 
 })

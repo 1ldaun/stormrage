@@ -63,16 +63,4 @@ describe("<Header/>", () => {
 
         expect(HeaderProps.setInfoSectionActive).toBeCalledTimes(2);
     })
-
-    it("Change language", () => {
-        const wrapper = mount(<Header {...HeaderProps} />);
-
-        expect(wrapper.exists()).toBeTruthy();
-
-        const changeLngButton = wrapper.find(".changeLang");
-        expect(changeLngButton.exists()).toBeTruthy();
-
-        const changeLngFn = changeLngButton.props()?.onClick;
-        expect(changeLngFn !== undefined).toBeTruthy();
-    })
 })

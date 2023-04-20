@@ -25,8 +25,8 @@ const InfoSection = ({isActive, setIsActive}: InfoSectionProps) => {
 
                 {skillsList.map(skillItem => (
                     <>
-                        <h4 className={styles.rightBlock__subtitle}>{skillItem.title}</h4>
-                        <p className={styles.rightBlock__text}>{skillItem.list}</p>
+                        <h4 key={skillItem.title} className={styles.rightBlock__subtitle}>{skillItem.title}</h4>
+                        <p key={skillItem.list} className={styles.rightBlock__text}>{skillItem.list}</p>
                     </>
                 ))}
 

@@ -26,11 +26,11 @@ describe("<InfoSection/>", () => {
     it("Check active state", () => {
         const wrapper = mount(<InfoSection {...InfoSectionProps} />);
 
-        expect(wrapper.hasClass(".wrapper_active")).toBeFalsy();
+        expect(wrapper.hasClass("wrapper_active")).toBeFalsy();
 
         const leftBlock = wrapper.find(".leftBlock");
         expect(leftBlock.exists()).toBeTruthy();
-        expect(leftBlock.hasClass(".leftBlock_active")).toBeFalsy();
+        expect(leftBlock.hasClass("leftBlock_active")).toBeFalsy();
 
 
         const infoSection = mount(<InfoSection {...InfoSectionProps} isActive={true} />);

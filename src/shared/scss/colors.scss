@@ -9,6 +9,8 @@
   --snowy: #fff;
   --same-text-color: #fff;
   --accent: #f06449;
+  --scrollbat-track: rgba(0,0,0,.1);
+  --scrollbat-thumb: rgba(0,0,0,.2);
 }
 
 :root[data-theme="dark"] {
@@ -22,4 +24,6 @@
   --snowy: #fff;
   --same-text-color: #000;
   --accent: #FF5722;
+  --scrollbat-track: rgba(0,0,0,.5);
+  --scrollbat-thumb: rgba(0,0,0,.6);
 }

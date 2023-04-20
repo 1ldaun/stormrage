@@ -6,18 +6,21 @@
   box-sizing: border-box;
 
   &::-webkit-scrollbar-track {
-    background: rgba(0,0,0,.1);
-    border-radius: 10px;
+    background: var(--scrollbat-track);
   }
 
   &::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,.2);
+    background: var(--scrollbat-thumb);
     border-radius: 10px;
   }
 
   &::-webkit-scrollbar {
     height: 6px;
     width: 6px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 }
 

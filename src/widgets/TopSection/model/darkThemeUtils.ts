@@ -12,7 +12,6 @@ export let canvas = document.createElement('canvas'),
         lineLength          : 150,
         particleLife        : 20,
     };
-console.log(properties.particleCount, window.innerWidth, window.innerHeight);
 
 window.onresize = () => {
     w = canvas.width = window.innerWidth;

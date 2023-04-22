@@ -25,6 +25,7 @@ describe("<TopSection/>", () => {
 
         const socialBlock = wrapper.find(".socialBlock");
         expect(socialBlock.exists()).toBeTruthy();
+        expect(TopSectionProps.isInfoSectionActive ? socialBlock.hasClass("socialBlock_hidden") : !socialBlock.hasClass("socialBlock_hidden ")).toBeTruthy()
     });
 
     it("Button check", () => {
@@ -42,5 +43,4 @@ describe("<TopSection/>", () => {
         button.simulate("click");
         expect(TopSectionProps.setIsInfoSectionActive).toBeCalledTimes(1);
     });
-
 })

@@ -1,7 +1,3 @@
-## Sonar statisctics
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=1ldaun_stormrage&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=1ldaun_stormrage)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=1ldaun_stormrage&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=1ldaun_stormrage)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=1ldaun_stormrage&metric=coverage)](https://sonarcloud.io/summary/new_code?id=1ldaun_stormrage)
 ## Structure
 For this project I take Feature-sliced design structure
 ```sh

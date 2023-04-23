@@ -1,3 +1,4 @@
+[<h1 align="center"><img alt="Deployed with FTP Deploy Action" src="https://img.shields.io/badge/Deployed With-FTP DEPLOY ACTION-%3CCOLOR%3E?style=for-the-badge&color=d00000"></h1>](https://github.com/SamKirkland/FTP-Deploy-Action)
 ## Sonar statisctics
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=1ldaun_stormrage&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=1ldaun_stormrage)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=1ldaun_stormrage&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=1ldaun_stormrage)

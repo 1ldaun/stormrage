@@ -1,4 +1,4 @@
-name: Checking Sonar quality 🔨
+name: 🔨 Checking Sonar quality
 on:
   push:
     branches:

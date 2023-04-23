@@ -107,6 +107,7 @@
   overflow: hidden;
   visibility: hidden;
   transition: all .1s ease .5s;
+  will-change: transform, opacity;
 
   &::before {
     background-color: #f06449;
@@ -159,18 +160,21 @@
       opacity: 1;
       transform: translateY(-3%);
       transition-delay: .4s;
+      will-change: transform, opacity;
     }
 
     .mobileScreen__icons {
       opacity: 1;
       transform: translateY(-7%);
       transition-delay: .4s;
+      will-change: transform, opacity;
     }
 
     .mobileScreen__close {
       opacity: 1;
       transform: translateY(-3%);
       transition-delay: .4s;
+      will-change: transform, opacity;
     }
   }
 

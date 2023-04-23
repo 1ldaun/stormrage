@@ -73,6 +73,10 @@
     transform: translateX(-100%);
   }
 
+  &_ruFont * {
+    font-family: "Montserrat Alternates", sans-serif!important;
+  }
+
   &_active {
     transform: translateY(0);
     opacity: 1;
@@ -209,6 +213,10 @@
     margin-top: 4px;
     font-family: Libre Baskerville,Palatino Linotype,Times New Roman,serif;
     font-size: 14px;
+
+    &_ruFont {
+      font-family: "Montserrat Alternates", sans-serif;
+    }
   }
 
   &__socialBlock {

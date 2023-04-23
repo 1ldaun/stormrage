@@ -1,4 +1,4 @@
-name: Build
+name: Checking Sonar quality 🔨
 on:
   push:
     branches:

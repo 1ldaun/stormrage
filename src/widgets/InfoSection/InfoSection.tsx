@@ -6,6 +6,7 @@ import {ReactComponent as CssImg} from "../../shared/img/css.svg";
 import {ReactComponent as UIImg} from "../../shared/img/ui.svg";
 import cx from "classnames";
 import {skillsList} from "../../shared/mocks/SkillsListMock";
+import {useTranslation} from "react-i18next";
 
 export interface InfoSectionProps {
     isActive: boolean;
@@ -14,6 +15,7 @@ export interface InfoSectionProps {
 
 const InfoSection = ({isActive, setIsActive}: InfoSectionProps) => {
     const infoSectionHandler = () => setIsActive(prev => !prev);
+    const { t, i18n } = useTranslation();
 
     return (
         <div className={cx(styles.wrapper, isActive ? styles.wrapper_active : "")}>
@@ -30,8 +32,8 @@ const InfoSection = ({isActive, setIsActive}: InfoSectionProps) => {
                     </>
                 ))}
 
-                <h3 className={styles.rightBlock__title}>Let’s talk</h3>
-                <p className={styles.rightBlock__text}>New projects, freelance inquiry or even a coffee.</p>
+                <h3 className={styles.rightBlock__title}>{t("infoSection.skillsLetsTalkSubtitle")}</h3>
+                <p className={cx(styles.rightBlock__text, i18n.language === "ru" ? styles.rightBlock__text_ruFont : "")}>{t("infoSection.skillsLetsTalkText")}</p>
 
                 <div className={styles.rightBlock__socialBlock}>
                     <a href="https://t.me/d1sinterested" target="_blank" rel="noreferrer" ><i className="fab fa-telegram-plane"/></a>
@@ -40,17 +42,13 @@ const InfoSection = ({isActive, setIsActive}: InfoSectionProps) => {
                     <a href="https://github.com/1ldaun" target="_blank" rel="noreferrer" ><i className="fa-brands fa-github"></i></a>
                 </div>
             </div>
-            <div className={cx(styles.leftBlock, isActive ? styles.leftBlock_active : "")}>
+            <div className={cx(styles.leftBlock, isActive ? styles.leftBlock_active : "", i18n.language === "ru" ? styles.leftBlock_ruFont : "")}>
                 <p className={styles.leftBlock__backgroundText}>About</p>
-                <h3 className={styles.leftBlock__title}>About Me</h3>
-                <h4 className={styles.leftBlock__subtitle}>Front-end developer</h4>
-                <p className={styles.leftBlock__content}>
-                    I'm Ildan Sharifullin, a 20-year-old <strong>Front-end developer</strong>.
-                    <br/>
-                    I like to <strong>resolve</strong> design problems, <strong>create</strong> smart user interface
-                    and <strong>imagine</strong> useful interaction, developing rich web experiences &amp; <strong>web
-                    applications</strong> and interest templates.
-                </p>
+                <h3 className={styles.leftBlock__title}>{t("infoSection.aboutTitle")}</h3>
+                <h4 className={styles.leftBlock__subtitle}>{t("infoSection.aboutSubtitle")}</h4>
+                <p className={styles.leftBlock__content} dangerouslySetInnerHTML={
+                    {__html: t('infoSection.aboutText', {interpolation: {escapeValue: false}})}
+                }/>
                 <ul className={styles.iconsList}>
                     <li className={styles.iconsList__item}>
                         <div className={styles.iconsList__label}>React.js</div>

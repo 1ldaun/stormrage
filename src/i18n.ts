@@ -22,6 +22,16 @@ const resources = {
                 description: "Front-end developer",
                 button: "About me",
             },
+            infoSection: {
+                aboutTitle: "About Me",
+                aboutSubtitle: "Front-end developer",
+                aboutText: "I'm Ildan Sharifullin, a 20-year-old <strong>Front-end developer</strong>" +
+                    "<br/>I like to <strong>resolve</strong> design problems, <strong>create</strong> smart user interface" +
+                    "and <strong>imagine</strong> useful interaction, developing rich web experiences &amp; <strong>web" +
+                    "applications</strong> and interest templates.",
+                skillsLetsTalkSubtitle: "Let’s talk",
+                skillsLetsTalkText: "New projects, freelance inquiry or even a coffee.",
+            },
             worksSection: {
                 title: "case studies",
                 subtitle: "Latest Works",
@@ -47,6 +57,15 @@ const resources = {
                 name: "Ильдан Шарифуллин",
                 description: "Фронтенд-разработчик",
                 button: "Инфо",
+            },
+            infoSection: {
+                aboutTitle: "Обо мне",
+                aboutSubtitle: "Фронтенд разработчик",
+                aboutText: "Привет! Меня зовут Ильдан, мне 20 лет и я <strong>Фронтенд разработчик</strong>." +
+                    "<br/>Мне нравится <strong>улучшать</strong> интерфейсы веб-приложений, делать их <strong>удобнее и \"умнее\"</strong>, " +
+                    "а также наполнять <strong>интерактивностью, анимациями и функционалом</strong> самые разные макеты сайтов.",
+                skillsLetsTalkSubtitle: "Поболтаем?",
+                skillsLetsTalkText: "Буду рад обсудить с тобой любые проекты/идеи, или просто поболтать за чашекой кофе 🖤",
             },
             worksSection: {
                 title: "портфолио",

@@ -97,7 +97,7 @@ const drawLines = () => {
 }
 
 const reDrawParticles = () => {
-    for(var i in particles){
+    for(let i in particles){
         particles[i].reCalculateLife();
         particles[i].position();
         particles[i].reDraw();

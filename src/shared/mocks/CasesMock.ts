@@ -3,6 +3,7 @@ import spotifyImgUrl from "../img/spotify.jpg";
 import deliveryImgUrl from "../img/delivery.jpg";
 import alCatanImgUrl from "../img/al-catan.jpg";
 import iProffiImgUrl from "../img/iproffi.jpg";
+import fooBarImgUrl from "../img/foo-bar.jpg";
 
 export const cases = [
     {
@@ -21,7 +22,7 @@ export const cases = [
             "Common meal delivery service. Made with React Hooks and backend part (last one temporary unavailable)",
         ],
         url: "https://foo-bar.ildan-dev.ru/",
-        imageUrl: birdImgUrl,
+        imageUrl: fooBarImgUrl,
     },
     {
         title: "Iproffi",

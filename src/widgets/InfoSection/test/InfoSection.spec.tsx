@@ -63,13 +63,13 @@ describe("<InfoSection/>", () => {
         const rightBlockText = rightBlock.find(".rightBlock__text");
         expect(rightBlockText.exists()).toBeTruthy();
         expect(rightBlockText.exists()).toBeTruthy();
-        expect(result.current.i18n.language === "ru" && rightBlockText.last().hasClass("rightBlock__text_ruFont")).toBeTruthy();
-        expect(result.current.i18n.language !== "ru" && rightBlockText.last().hasClass("rightBlock__text_ruFont")).toBeFalsy();
+        expect((result.current.i18n.language === "ru" && rightBlockText.last().hasClass("rightBlock__text_ruFont")) ||
+            (result.current.i18n.language !== "ru" && !rightBlockText.last().hasClass("rightBlock__text_ruFont"))).toBeTruthy();
 
         const leftBlock = wrapper.find(".leftBlock");
         expect(leftBlock.exists()).toBeTruthy();
-        expect(result.current.i18n.language === "ru" && leftBlock.hasClass("leftBlock_ruFont")).toBeTruthy();
-        expect(result.current.i18n.language !== "ru" && leftBlock.hasClass("leftBlock_ruFont")).toBeFalsy();
+        expect((result.current.i18n.language === "ru" && leftBlock.hasClass("leftBlock_ruFont")) ||
+            (result.current.i18n.language !== "ru" && !leftBlock.hasClass("leftBlock_ruFont"))).toBeTruthy();
 
         const socialBlock = rightBlock.find(".rightBlock__socialBlock");
         expect(socialBlock.exists()).toBeTruthy();

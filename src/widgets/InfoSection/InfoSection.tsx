@@ -33,7 +33,7 @@ const InfoSection = ({isActive, setIsActive}: InfoSectionProps) => {
                 ))}
 
                 <h3 className={styles.rightBlock__title}>{t("infoSection.skillsLetsTalkSubtitle")}</h3>
-                <p className={cx(styles.rightBlock__text, i18n.language === "ru" && styles.rightBlock__text_ruFont)}>{t("infoSection.skillsLetsTalkText")}</p>
+                <p className={cx(styles.rightBlock__text, i18n.language === "ru" ? styles.rightBlock__text_ruFont : "")}>{t("infoSection.skillsLetsTalkText")}</p>
 
                 <div className={styles.rightBlock__socialBlock}>
                     <a href="https://t.me/d1sinterested" target="_blank" rel="noreferrer" ><i className="fab fa-telegram-plane"/></a>
@@ -42,7 +42,7 @@ const InfoSection = ({isActive, setIsActive}: InfoSectionProps) => {
                     <a href="https://github.com/1ldaun" target="_blank" rel="noreferrer" ><i className="fa-brands fa-github"></i></a>
                 </div>
             </div>
-            <div className={cx(styles.leftBlock, isActive ? styles.leftBlock_active : "", i18n.language === "ru" && styles.leftBlock_ruFont)}>
+            <div className={cx(styles.leftBlock, isActive ? styles.leftBlock_active : "", i18n.language === "ru" ? styles.leftBlock_ruFont : "")}>
                 <p className={styles.leftBlock__backgroundText}>About</p>
                 <h3 className={styles.leftBlock__title}>{t("infoSection.aboutTitle")}</h3>
                 <h4 className={styles.leftBlock__subtitle}>{t("infoSection.aboutSubtitle")}</h4>

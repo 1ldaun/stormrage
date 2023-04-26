@@ -12,6 +12,7 @@ const App = () => {
     return (
         <>
             <Helmet>
+                <title>{t("htmlHead.name")}</title>
                 <meta
                     name={t("htmlHead.name") || ""}
                     content={t("htmlHead.content") || ""}

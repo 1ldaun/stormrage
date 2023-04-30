@@ -5,7 +5,6 @@ const resources = {
     en: {
         translation: {
             htmlHead: {
-                name: "Ildan Sharifullin - E-Portfolio",
                 content: "I'm Ildan Sharifullin, a 20-year-old Front-end developer. I like to create smart user interface and imagine useful interaction, developing rich web experiences & web applications and interest templates.",
             },
             header: {
@@ -41,7 +40,6 @@ const resources = {
     ru: {
         translation: {
             htmlHead: {
-                name: "Ильдан Шарифуллин - Фронтенд портфолио",
                 content: "Здесь вы найдете мои работы в сфере фронтенд разработки, а также мои контакты. Ильдан Шарифуллин.",
             },
             header: {

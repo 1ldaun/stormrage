@@ -14,7 +14,7 @@ const App = () => {
             <Helmet>
                 <title>{t("htmlHead.name")}</title>
                 <meta
-                    name={t("htmlHead.name") || ""}
+                    name="description"
                     content={t("htmlHead.content") || ""}
                 />
                 <meta name="theme-color" content={prefersColor} />

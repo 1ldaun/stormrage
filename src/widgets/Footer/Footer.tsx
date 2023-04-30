@@ -14,7 +14,7 @@ const Footer = () => {
                     <a href="https://vk.com/dis1nterested" target="_blank" rel="noreferrer" className={styles.navigation__link}>Vkontakte</a>
                 </li>
                 <li className={styles.navigation__item}>
-                    <a href="https://github.com/1ldaun" target="_blank" rel="noreferrer" className={styles.navigation__link}>GitHub</a>
+                    <a href="https://github.com/stormrage-web" target="_blank" rel="noreferrer" className={styles.navigation__link}>GitHub</a>
                 </li>
             </ul>
             <p className={styles.copyright}>© 2023 Ildan Sharifullin</p>

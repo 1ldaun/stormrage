@@ -57,7 +57,7 @@ const Header = ({setInfoSectionActive, theme}: HeaderProps) => {
                     <a href="https://t.me/d1sinterested" target="_blank" rel="noreferrer" ><i className="fab fa-telegram-plane"/></a>
                     <a href="https://vk.com/dis1nterested" target="_blank" rel="noreferrer" ><i className="fa-brands fa-vk"/></a>
                     <a href="mailto:sharfull33@gmail.ru" target="_blank" rel="noreferrer" ><i className="far fa-envelope"/></a>
-                    <a href="https://github.com/1ldaun" target="_blank" rel="noreferrer" ><i className="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/stormrage-web" target="_blank" rel="noreferrer" ><i className="fa-brands fa-github"></i></a>
                 </div>
                 <div className={styles.mobileScreen__close} onClick={mobileMenuHandler}>
                     <i className="fa-solid fa-xmark"/>

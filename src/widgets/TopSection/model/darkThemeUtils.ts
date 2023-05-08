@@ -16,6 +16,7 @@ export let canvas = document.createElement('canvas'),
 window.onresize = () => {
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
+    properties.particleCount = Math.round(0.00004509525 * window.innerWidth * window.innerHeight);
 };
 
 class Particle {

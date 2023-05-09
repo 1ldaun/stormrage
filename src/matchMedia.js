@@ -1,6 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires,no-undef
-const jest = require("jest");
-
 Object.defineProperty(window, "matchMedia", {
 	writable: true,
 	value: jest.fn().mockImplementation((query) => ({

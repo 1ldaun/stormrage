@@ -1,7 +1,7 @@
 .wrapper {
   background: var(--black-3);
   color: #fff;
-  font-family: Libre Baskerville,Palatino Linotype,Times New Roman,serif;
+  font-family: Libre Baskerville, Palatino Linotype, Times New Roman, serif;
   padding: 35px 0 15px 0;
   width: 100%;
 }
@@ -25,13 +25,13 @@
   margin: 0;
   padding: 0;
 
-  &>*:not(:last-child) {
+  & > *:not(:last-child) {
     margin-right: 60px;
   }
 
   &__link {
     color: #f3f3f3;
-    font-family: League Spartan,Helvetica,Arial,sans-serif;
+    font-family: League Spartan, Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 20px;
     padding: 15px 0;
@@ -41,7 +41,7 @@
   @media (max-width: 450px) {
     flex-direction: column;
 
-    &>*:not(:last-child) {
+    & > *:not(:last-child) {
       margin-right: 0;
       margin-bottom: 15px;
     }

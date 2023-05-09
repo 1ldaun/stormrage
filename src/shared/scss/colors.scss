@@ -9,8 +9,8 @@
   --snowy: #fff;
   --same-text-color: #fff;
   --accent: #f06449;
-  --scrollbat-track: rgba(0,0,0,.1);
-  --scrollbat-thumb: rgba(0,0,0,.2);
+  --scrollbat-track: rgba(0, 0, 0, 0.1);
+  --scrollbat-thumb: rgba(0, 0, 0, 0.2);
 }
 
 :root[data-theme="dark"] {
@@ -20,10 +20,10 @@
   --gray-1: #4c4f65;
   --gray-2: #dbdce4;
   --gray-3: #212121;
-  --golden: #FF5722;
+  --golden: #ff5722;
   --snowy: #fff;
   --same-text-color: #000;
-  --accent: #FF5722;
-  --scrollbat-track: rgba(0,0,0,.5);
-  --scrollbat-thumb: rgba(0,0,0,.6);
+  --accent: #ff5722;
+  --scrollbat-track: rgba(0, 0, 0, 0.5);
+  --scrollbat-thumb: rgba(0, 0, 0, 0.6);
 }

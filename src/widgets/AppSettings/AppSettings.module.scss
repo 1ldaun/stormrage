@@ -26,20 +26,20 @@
   z-index: 2;
 
   &__label {
-    --duration: .45s;
+    --duration: 0.45s;
     --stroke: var(--gray-1);
     --stroke-active: var(--gray-1);
     --fill: var(--black-1);
     --fill-active: var(--accent);
-    --shadow: #{rgba(#00093D, .25)};
+    --shadow: #{rgba(#00093d, 0.25)};
     cursor: pointer;
     position: relative;
     transform: scale(var(--s, 1)) translateZ(0);
-    transition: transform .2s;
+    transition: transform 0.2s;
     -webkit-tap-highlight-color: transparent;
 
     &:active {
-      --s: .95;
+      --s: 0.95;
     }
 
     input {

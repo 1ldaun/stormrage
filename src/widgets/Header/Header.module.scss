@@ -26,7 +26,7 @@
   display: flex;
   list-style: none;
 
-  >*:not(:last-child) {
+  > *:not(:last-child) {
     margin-right: 25px;
   }
 
@@ -73,7 +73,7 @@
   cursor: pointer;
   margin-bottom: 5px;
 
-  >*:not(:last-child) {
+  > *:not(:last-child) {
     margin-bottom: 8px;
   }
 
@@ -106,12 +106,12 @@
   z-index: -1;
   overflow: hidden;
   visibility: hidden;
-  transition: all .1s ease .5s;
+  transition: all 0.1s ease 0.5s;
   will-change: transform, opacity;
 
   &::before {
     background-color: #f06449;
-    background: linear-gradient(270deg,#f06449,#ee2828);
+    background: linear-gradient(270deg, #f06449, #ee2828);
     z-index: -2;
     content: "";
     height: 100%;
@@ -120,15 +120,16 @@
     position: absolute;
     top: 0;
     transform: translateX(-100%);
-    transition: transform .45s cubic-bezier(.694,.048,.335,1),-webkit-transform .45s cubic-bezier(.694,.048,.335,1);
-    transition-delay: .25s;
+    transition: transform 0.45s cubic-bezier(0.694, 0.048, 0.335, 1),
+    -webkit-transform 0.45s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition-delay: 0.25s;
     width: 100%;
     will-change: transform;
   }
 
   &::after {
-    background: linear-gradient(270deg,#235aa6,#101b3b);
-    transition-delay: .15s;
+    background: linear-gradient(270deg, #235aa6, #101b3b);
+    transition-delay: 0.15s;
     z-index: -1;
     content: "";
     height: 100%;
@@ -137,7 +138,8 @@
     position: absolute;
     top: 0;
     transform: translateX(-100%);
-    transition: transform .45s cubic-bezier(.694,.048,.335,1),-webkit-transform .45s cubic-bezier(.694,.048,.335,1);
+    transition: transform 0.45s cubic-bezier(0.694, 0.048, 0.335, 1),
+    -webkit-transform 0.45s cubic-bezier(0.694, 0.048, 0.335, 1);
     width: 100%;
     will-change: transform;
   }
@@ -145,7 +147,7 @@
   &_active {
     visibility: visible;
     z-index: 145;
-    transition-delay: .1s;
+    transition-delay: 0.1s;
 
     &::before {
       transform: translateX(0);
@@ -159,21 +161,21 @@
     .mobileScreen__nav {
       opacity: 1;
       transform: translateY(-3%);
-      transition-delay: .4s;
+      transition-delay: 0.4s;
       will-change: transform, opacity;
     }
 
     .mobileScreen__icons {
       opacity: 1;
       transform: translateY(-7%);
-      transition-delay: .4s;
+      transition-delay: 0.4s;
       will-change: transform, opacity;
     }
 
     .mobileScreen__close {
       opacity: 1;
       transform: translateY(-3%);
-      transition-delay: .4s;
+      transition-delay: 0.4s;
       will-change: transform, opacity;
     }
   }
@@ -186,9 +188,10 @@
     margin-left: 50px;
     opacity: 0;
     transform-style: preserve-3d;
-    transition: opacity .2s ease,transform .2s cubic-bezier(.694,.048,.335,1);
+    transition: opacity 0.2s ease,
+    transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
 
-    >*:not(:last-child) {
+    > *:not(:last-child) {
       margin-bottom: 18px;
     }
 
@@ -209,7 +212,9 @@
     bottom: 15px;
     opacity: 0;
     transform-style: preserve-3d;
-    transition: opacity .25s ease,transform .4s cubic-bezier(.694,.048,.335,1),-webkit-transform .4s cubic-bezier(.694,.048,.335,1);
+    transition: opacity 0.25s ease,
+    transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1),
+    -webkit-transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
 
     * {
       font-size: 30px;
@@ -230,6 +235,8 @@
     cursor: pointer;
     opacity: 0;
     transform-style: preserve-3d;
-    transition: opacity .3s ease,transform .4s cubic-bezier(.694,.048,.335,1),-webkit-transform .4s cubic-bezier(.694,.048,.335,1);
+    transition: opacity 0.3s ease,
+    transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1),
+    -webkit-transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
   }
 }

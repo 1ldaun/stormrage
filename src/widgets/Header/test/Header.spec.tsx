@@ -1,66 +1,71 @@
+import React from "react";
 import Header from "../Header";
-import {configure, mount} from "enzyme";
-import Adapter from '@cfaester/enzyme-adapter-react-18';
-import {ThemeEnum} from "../../../processes/Theme/useTheme";
+import { configure, mount } from "enzyme";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { ThemeEnum } from "../../../processes/Theme/useTheme";
 
 configure({ adapter: new Adapter() });
 
 const HeaderProps = {
-    setInfoSectionActive: jest.fn(),
-    theme: ThemeEnum.default,
-}
+	setInfoSectionActive: jest.fn(),
+	theme: ThemeEnum.default,
+};
 
 describe("<Header/>", () => {
-    it("Rendering", () => {
-        const wrapper = mount(<Header {...HeaderProps} />);
+	it("Rendering", () => {
+		const wrapper = mount(<Header {...HeaderProps} />);
 
-        const navigation = wrapper.find(".navigation");
-        expect(navigation.exists()).toBeTruthy();
-        expect(navigation.children().length).toEqual(2);
+		const navigation = wrapper.find(".navigation");
+		expect(navigation.exists()).toBeTruthy();
+		expect(navigation.children().length).toEqual(2);
 
-        const mobileNavigation = wrapper.find(".mobileNavigation");
-        expect(mobileNavigation.hasClass(".mobileScreen_active")).toBeFalsy();
-        expect(mobileNavigation.children().length).toEqual(3);
+		const mobileNavigation = wrapper.find(".mobileNavigation");
+		expect(mobileNavigation.hasClass(".mobileScreen_active")).toBeFalsy();
+		expect(mobileNavigation.children().length).toEqual(3);
 
-        const mobileScreen = wrapper.find(".mobileScreen");
-        expect(mobileScreen.exists()).toBeTruthy();     // mobileScreen hidden
+		const mobileScreen = wrapper.find(".mobileScreen");
+		expect(mobileScreen.exists()).toBeTruthy(); // mobileScreen hidden
 
-        const navButton = wrapper.find(".mobileNavigation");
-        expect(navButton.exists()).toBeTruthy();
-    });
+		const navButton = wrapper.find(".mobileNavigation");
+		expect(navButton.exists()).toBeTruthy();
+	});
 
-    it("Display mobile screen", () => {
-        const wrapper = mount(<Header {...HeaderProps} />);
-        expect(wrapper.find(".mobileScreen").hasClass(".mobileScreen_active")).toBeFalsy();     //  mobileScreen hidden
+	it("Display mobile screen", () => {
+		const wrapper = mount(<Header {...HeaderProps} />);
+		expect(
+			wrapper.find(".mobileScreen").hasClass(".mobileScreen_active"),
+		).toBeFalsy(); //  mobileScreen hidden
 
-        const navButton = wrapper.find(".mobileNavigation");
-        expect(navButton.exists()).toBeTruthy();
-        navButton.simulate('click');
+		const navButton = wrapper.find(".mobileNavigation");
+		expect(navButton.exists()).toBeTruthy();
+		navButton.simulate("click");
 
-        expect(wrapper.find(".mobileScreen").exists()).toBeTruthy();    //  mobileScreen displayed
-    })
+		expect(wrapper.find(".mobileScreen").exists()).toBeTruthy(); //  mobileScreen displayed
+	});
 
-    it("Display InfoSection", () => {
-        const wrapper = mount(<Header {...HeaderProps} />);
-        expect(wrapper.find(".mobileScreen").hasClass(".mobileScreen_active")).toBeFalsy();
+	it("Display InfoSection", () => {
+		const wrapper = mount(<Header {...HeaderProps} />);
+		expect(
+			wrapper.find(".mobileScreen").hasClass(".mobileScreen_active"),
+		).toBeFalsy();
 
-        const navButton = wrapper.find(".mobileNavigation");
-        expect(navButton.exists()).toBeTruthy();
-        navButton.simulate('click');
+		const navButton = wrapper.find(".mobileNavigation");
+		expect(navButton.exists()).toBeTruthy();
+		navButton.simulate("click");
 
-        expect(wrapper.find(".mobileScreen").exists()).toBeTruthy();    //  mobileScreen displayed
-        expect(HeaderProps.setInfoSectionActive).toBeCalledTimes(0);
+		expect(wrapper.find(".mobileScreen").exists()).toBeTruthy(); //  mobileScreen displayed
+		expect(HeaderProps.setInfoSectionActive).toBeCalledTimes(0);
 
-        const infoButton = wrapper.find("[data-testid='aboutMe']");
-        expect(infoButton.exists()).toBeTruthy();
-        infoButton.simulate('click');
+		const infoButton = wrapper.find("[data-testid='aboutMe']");
+		expect(infoButton.exists()).toBeTruthy();
+		infoButton.simulate("click");
 
-        expect(HeaderProps.setInfoSectionActive).toBeCalledTimes(1);
+		expect(HeaderProps.setInfoSectionActive).toBeCalledTimes(1);
 
-        const infoMobileButton = wrapper.find("[data-testid='mobileAboutMe']");
-        expect(infoMobileButton.exists()).toBeTruthy();
-        infoMobileButton.simulate('click');
+		const infoMobileButton = wrapper.find("[data-testid='mobileAboutMe']");
+		expect(infoMobileButton.exists()).toBeTruthy();
+		infoMobileButton.simulate("click");
 
-        expect(HeaderProps.setInfoSectionActive).toBeCalledTimes(2);
-    })
-})
+		expect(HeaderProps.setInfoSectionActive).toBeCalledTimes(2);
+	});
+});

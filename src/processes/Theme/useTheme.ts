@@ -5,12 +5,15 @@ export enum ThemeEnum {
 	dark = "dark",
 }
 
-const isDarkTheme = window?.matchMedia("(prefers-color-scheme: dark)").matches;
-const prefersColor = isDarkTheme ? ThemeEnum.dark : ThemeEnum.default;
+// Определение цвета на основании цветовой схемы ОС
+// const isDarkTheme = window?.matchMedia("(prefers-color-scheme: dark)").matches;
+// const PREFERS_COLOR = isDarkTheme ? ThemeEnum.dark : ThemeEnum.default;
+
+const PREFERS_COLOR = ThemeEnum.dark;
 
 export const useTheme = () => {
 	const [theme, setTheme] = useState<ThemeEnum>(
-		(localStorage.getItem("app-theme") as ThemeEnum) || prefersColor,
+		(localStorage.getItem("app-theme") as ThemeEnum) || PREFERS_COLOR,
 	);
 
 	useLayoutEffect(() => {

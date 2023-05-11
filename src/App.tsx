@@ -3,11 +3,6 @@ import { Helmet } from "react-helmet";
 import MainPage from "./pages/MainPage/MainPage";
 import { useTranslation } from "react-i18next";
 
-const isPrefersDark = window?.matchMedia(
-	"(prefers-color-scheme: dark)",
-).matches;
-const prefersColor = isPrefersDark ? "#000000" : "#ffffff";
-
 const App = () => {
 	const { t } = useTranslation();
 
@@ -19,7 +14,7 @@ const App = () => {
 					name="description"
 					content={t("htmlHead.content") || ""}
 				/>
-				<meta name="theme-color" content={prefersColor} />
+				<meta name="theme-color" content="#000000" />
 			</Helmet>
 			<MainPage />
 		</>

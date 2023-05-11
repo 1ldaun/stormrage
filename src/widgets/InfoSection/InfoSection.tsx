@@ -7,6 +7,7 @@ import { ReactComponent as UIImg } from "../../shared/img/ui.svg";
 import cx from "classnames";
 import { skillsList } from "../../shared/mocks/SkillsListMock";
 import { useTranslation } from "react-i18next";
+import { iconLinks } from "../../shared/mocks/iconLinksMock";
 
 export interface InfoSectionProps {
 	isActive: boolean;
@@ -70,34 +71,16 @@ const InfoSection = ({ isActive, setIsActive }: InfoSectionProps) => {
 				</p>
 
 				<div className={styles.rightBlock__socialBlock}>
-					<a
-						href="https://t.me/d1sinterested"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<i className="fab fa-telegram-plane" />
-					</a>
-					<a
-						href="https://vk.com/dis1nterested"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<i className="fa-brands fa-vk" />
-					</a>
-					<a
-						href="mailto:sharfull33@gmail.ru"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<i className="far fa-envelope" />
-					</a>
-					<a
-						href="https://github.com/stormrage-web"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<i className="fa-brands fa-github"></i>
-					</a>
+					{iconLinks.map((iconLink) => (
+						<a
+							key={iconLink.link}
+							href={iconLink.link}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<i className={iconLink.iconStyleName} />
+						</a>
+					))}
 				</div>
 			</div>
 			<div

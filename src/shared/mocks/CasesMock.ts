@@ -4,6 +4,7 @@ import deliveryImgUrl from "../img/delivery.jpg";
 import alCatanImgUrl from "../img/al-catan.jpg";
 import iProffiImgUrl from "../img/iproffi.jpg";
 import fooBarImgUrl from "../img/foo-bar.jpg";
+import hackImgUrl from "../img/hackathon.jpg";
 
 export const cases = [
 	{
@@ -56,5 +57,14 @@ export const cases = [
 		],
 		url: "https://delivery-food.ildan-dev.ru/",
 		imageUrl: deliveryImgUrl,
+	},
+	{
+		title: "Aeroflot hackathon project",
+		subtitles: [
+			"Solution for the problem of hackathon",
+			"My team took 3rd place with this project",
+		],
+		url: "https://air.ildan-dev.ru/",
+		imageUrl: hackImgUrl,
 	},
 ];

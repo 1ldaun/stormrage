@@ -102,7 +102,7 @@ const InfoSection = ({ isActive, setIsActive }: InfoSectionProps) => {
 					dangerouslySetInnerHTML={{
 						__html: t("infoSection.aboutText", {
 							interpolation: { escapeValue: false },
-						}),
+						}) || "",
 					}}
 				/>
 				<ul className={styles.iconsList}>

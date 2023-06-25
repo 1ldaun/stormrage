@@ -31,30 +31,5 @@ describe("<Modal/>", () => {
 
 		expect(handleClose).toHaveBeenCalledTimes(1);
 	});
-	// it("Check onClose function on overlay", async () => {
-	// 	const handleClose = jest.fn();
-	//
-	// 	const wrapper = mount(
-	// 		<Modal onClose={handleClose}>
-	// 			children
-	// 		</Modal>,
-	// 	);
-	//
-	// 	wrapper.simulate("click");
-	//
-	// 	expect(wrapper).hatoHaveBeenCalledTimes(1);
-	// });
-	// it("Check onClose function on ESC key", () => {
-	// 	const handleClose = jest.fn();
-	//
-	// 	const wrapper = mount(
-	// 		<Modal onClose={handleClose}>
-	// 			children
-	// 		</Modal>,
-	// 	);
-	//
-	// 	wrapper.simulate("keypress", { key: "Escape" });
-	//
-	// 	expect(handleClose).toHaveBeenCalledTimes(1);
-	// });
+
 });

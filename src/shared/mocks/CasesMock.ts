@@ -5,6 +5,7 @@ import alCatanImgUrl from "../img/al-catan.jpg";
 import iProffiImgUrl from "../img/iproffi.jpg";
 import fooBarImgUrl from "../img/foo-bar.jpg";
 import hackImgUrl from "../img/hackathon.jpg";
+import HackModal from "../../entities/HackModal/HackModal";
 
 export const cases = [
 	{
@@ -66,5 +67,6 @@ export const cases = [
 		],
 		url: "https://air.ildan-dev.ru/",
 		imageUrl: hackImgUrl,
+		modal: HackModal,
 	},
 ];

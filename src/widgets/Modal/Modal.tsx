@@ -2,6 +2,7 @@ import React, { HTMLProps, MouseEventHandler, useCallback, useRef } from "react"
 import { useEffect, useState } from "react";
 import Portal, { createContainer } from "../Portal/Portal";
 import styles from "./Modal.module.scss";
+import {ReactComponent as CloseSvg} from "../../shared/img/close.svg";
 
 const MODAL_CONTAINER_ID = "modal-container-id";
 
@@ -39,10 +40,12 @@ const Modal = ({ onClose, children }: ModalProps) => {
 
 		window.addEventListener("click", handleWrapperClick);
 		window.addEventListener("keydown", handleEscapePress);
+		document.documentElement.style.overflow = "hidden";
 
 		return () => {
 			window.removeEventListener("click", handleWrapperClick);
 			window.removeEventListener("keydown", handleEscapePress);
+			document.documentElement.style.overflow = "";
 		};
 	}, [onClose]);
 
@@ -58,7 +61,7 @@ const Modal = ({ onClose, children }: ModalProps) => {
 								onClick={handleClose}
 								data-testid="on-close-button"
 							>
-								x
+								<CloseSvg/>
 							</button>
 							{children}
 						</div>

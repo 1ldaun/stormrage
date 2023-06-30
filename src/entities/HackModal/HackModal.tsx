@@ -22,6 +22,8 @@ const HackModal: React.FC<EventModalProps> = ({ opened, onClose }: EventModalPro
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto assumenda cupiditate
 				deserunt, distinctio expedita in incidunt maiores minima, minus molestiae molestias quisquam ratione
 				recusandae sunt ullam, vitae voluptate voluptatem?</p>
+			<img src={hackathonImg} className={styles.picture} alt="demo" />
+
 		</Modal>
 	) : (<></>);
 };

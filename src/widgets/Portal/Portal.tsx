@@ -16,7 +16,7 @@ const createContainer = (options: containerOptions) => {
 
 	const portalContainer = document.createElement("div");
 
-	portalContainer.setAttribute("id", id);
+	portalContainer.setAttribute("data-testid", "portalContainer-" + id);
 	mountNode.appendChild(portalContainer);
 };
 

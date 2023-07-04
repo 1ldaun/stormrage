@@ -14,7 +14,7 @@ describe("<Modal/>", () => {
 		);
 
 		const children = wrapper.find(".content");
-		expect(children.text()).toEqual("x" + testText);
+		expect(children.text()).toEqual("close.svg" + testText);
 	});
 
 	it("Check onClose function on button", () => {

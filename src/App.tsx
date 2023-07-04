@@ -17,6 +17,7 @@ const App = () => {
 				<meta name="theme-color" content="#000000" />
 			</Helmet>
 			<MainPage />
+			<div id="modal-container-id"/>
 		</>
 	);
 };

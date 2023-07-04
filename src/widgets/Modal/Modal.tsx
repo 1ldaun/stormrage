@@ -3,14 +3,16 @@ import { useEffect, useState } from "react";
 import Portal, { createContainer } from "../Portal/Portal";
 import styles from "./Modal.module.scss";
 import {ReactComponent as CloseSvg} from "../../shared/img/close.svg";
+import cx from "classnames";
 
 const MODAL_CONTAINER_ID = "modal-container-id";
 
 interface ModalProps extends HTMLProps<HTMLDivElement> {
 	onClose?: () => void;
 	children: React.ReactNode;
+	className?: string;
 }
-const Modal = ({ onClose, children }: ModalProps) => {
+const Modal = ({ onClose, children, className }: ModalProps) => {
 	const [isMounted, setMounted] = useState(false);
 	const rootRef = useRef<HTMLDivElement>(null);
 
@@ -53,7 +55,7 @@ const Modal = ({ onClose, children }: ModalProps) => {
 		isMounted
 			? (
 				<Portal id={MODAL_CONTAINER_ID}>
-					<div className={styles.wrap} ref={rootRef} data-testid="wrap">
+					<div className={cx(styles.wrap, className)} ref={rootRef} data-testid="wrap">
 						<div className={styles.content}>
 							<button
 								type="button"

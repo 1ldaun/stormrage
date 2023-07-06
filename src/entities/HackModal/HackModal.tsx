@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./HackModal.module.scss";
 import Modal from "../../widgets/Modal/Modal";
+import screen1 from "../../shared/img/screen_1.png";
 import hackathonImg from "../../shared/img/hackathon.jpg";
 
 export interface EventModalProps {
@@ -36,7 +37,7 @@ const HackModal: React.FC<EventModalProps> = ({ opened, onClose }: EventModalPro
 				момента менять что-либо в коде было запрещено.</p>
 			<p>6 июня, 10 часов утра. &quot;Да ладно, даже это решение вышло в топ-10 среди 43 команд?&quot; - такими
 				были мои мысли, хоть я был и доволен нашей с командой работой.</p>
-			<img src={hackathonImg} className={styles.picture} alt="demo" />
+			<img src={screen1} className={styles.picture} alt="demo" />
 			<p>Я был рад такому промежуточному результату, но передо мной возник серьезный вопрос о том, стоит ли ехать
 				и бороться за призовое место в Москву. Не подумайте, никакого страха я не испытывал, но середина сессии
 				и вступление на новую должность по-прежнему смущали меня. На следующий день мы созвонились с командой и

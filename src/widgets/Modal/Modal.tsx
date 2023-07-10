@@ -55,8 +55,8 @@ const Modal = ({ onClose, children, className }: ModalProps) => {
 		isMounted
 			? (
 				<Portal id={MODAL_CONTAINER_ID}>
-					<div className={cx(styles.wrap, className)} ref={rootRef} data-testid="wrap">
-						<div className={styles.content}>
+					<div className={styles.wrap} ref={rootRef} data-testid="wrap">
+						<div className={cx(styles.content, className)}>
 							<button
 								type="button"
 								className={styles.closeButton}

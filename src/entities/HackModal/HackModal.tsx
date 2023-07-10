@@ -51,7 +51,7 @@ const HackModal: React.FC<EventModalProps> = ({ opened, onClose }: EventModalPro
 				успеешь это исправить, то я еду в Москву защищать наше решение&quot;. И боже, как я благодарен ему, что
 				без доли сомнения он мне тогда ответил: &quot;Обещаю, все будет готово&quot;. Незамедлительно я
 				взял билеты, забронировал отель и стал расписывать все возможные доработки проекта.</p>
-			<img src={hackathonImg} className={styles.picture} alt="demo" />
+			<img src={hackathonImg} className={styles.picture_lg} alt="demo" />
 		</Modal>
 	) : (<></>);
 };

@@ -1,11 +1,24 @@
 .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
 
   p {
-    font-family: "Montserrat Alternates", sans-serif!important;
+    font-family: "Montserrat Alternates", sans-serif;
+
+    strong {
+      color: var(--accent);
+    }
   }
 }
 
 .picture {
-  width: 100%;
+  width: fit-content;
+
+  &_lg {
+    width: 100%;
+
+  }
 }

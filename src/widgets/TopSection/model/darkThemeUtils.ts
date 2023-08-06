@@ -20,7 +20,7 @@ window.onresize = () => {
 	w = canvas.width = window.innerWidth;
 	h = canvas.height = window.innerHeight;
 	properties.particleCount = Math.round(
-		screenCoefficient * window.innerWidth * window.innerHeight,
+		SCREEN_COEFFICIENT * window.innerWidth * window.innerHeight,
 	);
 };
 

@@ -67,6 +67,6 @@ export const cases = [
 		],
 		url: "https://air.ildan-dev.ru/",
 		imageUrl: hackImgUrl,
-		modal: HackModal,
+		// modal: HackModal,
 	},
 ];

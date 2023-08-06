@@ -2,13 +2,14 @@ export const canvas = document.createElement("canvas");
 const ctx = canvas.getContext("2d");
 let w = (canvas.width = window.innerWidth);
 let h = (canvas.height = window.innerHeight);
+const SCREEN_COEFFICIENT = 0.00004509525;
 const particles: Particle[] = [],
 	properties = {
 		bgColor: "rgba(17, 17, 19, 1)",
 		particleColor: "rgba(255, 40, 40, 1)",
 		particleRadius: 3,
 		particleCount: Math.round(
-			0.00004509525 * window.innerWidth * window.innerHeight,
+			SCREEN_COEFFICIENT * window.innerWidth * window.innerHeight,
 		),
 		particleMaxVelocity: 0.25,
 		lineLength: 150,
@@ -19,7 +20,7 @@ window.onresize = () => {
 	w = canvas.width = window.innerWidth;
 	h = canvas.height = window.innerHeight;
 	properties.particleCount = Math.round(
-		0.00004509525 * window.innerWidth * window.innerHeight,
+		screenCoefficient * window.innerWidth * window.innerHeight,
 	);
 };
 

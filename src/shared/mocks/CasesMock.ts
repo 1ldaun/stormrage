@@ -5,9 +5,19 @@ import alCatanImgUrl from "../img/al-catan.jpg";
 import iProffiImgUrl from "../img/iproffi.jpg";
 import fooBarImgUrl from "../img/foo-bar.jpg";
 import hackImgUrl from "../img/hackathon.jpg";
+import mariImgUrl from "../img/mari.png";
 import HackModal from "../../entities/HackModal/HackModal";
 
 export const cases = [
+	{
+		title: "3D landing",
+		subtitles: [
+			"React app (for any device)",
+			"Page with 3D-objects optimized for non-desktop devices",
+		],
+		url: "https://maritami.ildan-dev.ru/",
+		imageUrl: mariImgUrl,
+	},
 	{
 		title: "Spotify clone",
 		subtitles: [

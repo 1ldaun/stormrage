@@ -57,7 +57,7 @@ const TopSection = ({
 							: "",
 					)}
 					onClick={() => setIsInfoSectionActive((prev) => !prev)}
-					value={t("topSection.button") || ""}
+					value={t("topSection.button") ?? ""}
 				/>
 			</div>
 			<div

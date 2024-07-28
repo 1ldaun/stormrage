@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Case.module.scss";
 
-interface EventModalProps {
-	opened: boolean;
-	onClose: () => void;
-}
+// FIXME: Modal feature
+// interface EventModalProps {
+// 	opened: boolean;
+// 	onClose: () => void;
+// }
 
 export interface CaseProps {
 	id: string;
@@ -12,14 +13,16 @@ export interface CaseProps {
 	subtitles: string[];
 	url: string;
 	imageUrl: string;
-	modal?: React.FC<EventModalProps>;
+	// modal?: React.FC<EventModalProps>;
 }
 
 const Case = (props: CaseProps) => {
-	const { id, url, subtitles, title, imageUrl, modal } = props;
-	const [isModalActive, setIsModalActive] = useState(false);
+	const { id, url, subtitles, title, imageUrl } = props;
 
-	const handleModalActive = () => setIsModalActive(prev => !prev);
+	// FIXME: Modal feature
+	// const [isModalActive, setIsModalActive] = useState(false);
+	//
+	// const handleModalActive = () => setIsModalActive(prev => !prev);
 
 	const banner = (<>
 		<div className={styles.mask} />
@@ -47,26 +50,36 @@ const Case = (props: CaseProps) => {
 		</div>
 	</>);
 
-	return modal ?
-		(
-			<>
-				<div
-					onClick={handleModalActive}
-					className={styles.wrapper}
-					style={{ backgroundImage: `url("${imageUrl}")` }}>
-					{banner}
-				</div>
-				{modal({ opened: isModalActive, onClose: handleModalActive })}
-			</>
-		) : (
-			<a
-				href={url}
-				target="_blank"
-				rel="noreferrer"
-				className={styles.wrapper}
-				style={{ backgroundImage: `url("${imageUrl}")` }}
-			>{banner}</a>
-		);
+	return (
+		<a
+			href={url}
+			target="_blank"
+			rel="noreferrer"
+			className={styles.wrapper}
+			style={{ backgroundImage: `url("${imageUrl}")` }}
+		>{banner}</a>
+	);
+	// FIXME: Modal feature
+	// return modal ?
+	// 	(
+	// 		<>
+	// 			<div
+	// 				onClick={handleModalActive}
+	// 				className={styles.wrapper}
+	// 				style={{ backgroundImage: `url("${imageUrl}")` }}>
+	// 				{banner}
+	// 			</div>
+	// 			{modal({ opened: isModalActive, onClose: handleModalActive })}
+	// 		</>
+	// 	) : (
+	// 		<a
+	// 			href={url}
+	// 			target="_blank"
+	// 			rel="noreferrer"
+	// 			className={styles.wrapper}
+	// 			style={{ backgroundImage: `url("${imageUrl}")` }}
+	// 		>{banner}</a>
+	// 	);
 };
 
 export default Case;

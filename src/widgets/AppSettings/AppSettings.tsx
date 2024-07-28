@@ -21,7 +21,7 @@ const AppSettings = ({ theme, setTheme }: AppSettingsProps) => {
 
 	return (
 		<>
-			<div className={styles.changeLang} onClick={changeLangHandler}>
+			<div className={styles.changeLang} onClick={changeLangHandler} role="button">
 				{i18n.language === "en" ? "RU" : "EN"}
 			</div>
 			<div className={styles.heartSwitcher}>

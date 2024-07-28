@@ -1,5 +1,4 @@
-import React, { HTMLProps, MouseEventHandler, useCallback, useRef } from "react";
-import { useEffect, useState } from "react";
+import React, { HTMLProps, MouseEventHandler, useCallback, useRef, useEffect, useState } from "react";
 import Portal, { createContainer } from "../Portal/Portal";
 import styles from "./Modal.module.scss";
 import {ReactComponent as CloseSvg} from "../../shared/img/close.svg";
@@ -13,7 +12,7 @@ interface ModalProps extends HTMLProps<HTMLDivElement> {
 	className?: string;
 }
 const Modal = ({ onClose, children, className }: ModalProps) => {
-	const [isMounted, setMounted] = useState(false);
+	const [isMounted, setIsMounted] = useState(false);
 	const rootRef = useRef<HTMLDivElement>(null);
 
 	const handleClose: MouseEventHandler<HTMLButtonElement> =
@@ -23,7 +22,7 @@ const Modal = ({ onClose, children, className }: ModalProps) => {
 
 	useEffect(() => {
 		createContainer({ id: MODAL_CONTAINER_ID });
-		setMounted(true);
+		setIsMounted(true);
 	}, []);
 
 	useEffect(() => {

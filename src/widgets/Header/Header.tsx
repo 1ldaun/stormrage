@@ -42,6 +42,7 @@ const Header = ({ setInfoSectionActive, theme }: HeaderProps) => {
 						className={styles.navigation__item}
 						onClick={() => setInfoSectionActive(true)}
 						data-testid="aboutMe"
+						role="button"
 					>
 						{t("header.aboutMe")}
 					</li>
@@ -80,6 +81,7 @@ const Header = ({ setInfoSectionActive, theme }: HeaderProps) => {
 					<li
 						className={styles.mobileScreen__nav__item}
 						onClick={mobileMenuHandler}
+						role="button"
 					>
 						{t("mobileHeader.home")}
 					</li>
@@ -100,6 +102,7 @@ const Header = ({ setInfoSectionActive, theme }: HeaderProps) => {
 							mobileMenuHandler();
 							setInfoSectionActive(true);
 						}}
+						role="button"
 						data-testid="mobileAboutMe"
 					>
 						{t("mobileHeader.aboutMe")}
@@ -120,6 +123,7 @@ const Header = ({ setInfoSectionActive, theme }: HeaderProps) => {
 				<div
 					className={styles.mobileScreen__close}
 					onClick={mobileMenuHandler}
+					role="button"
 				>
 					<i className="fa-solid fa-xmark" />
 				</div>

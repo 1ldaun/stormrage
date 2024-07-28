@@ -12,7 +12,7 @@ const App = () => {
 				<title>{t("htmlHead.name")}</title>
 				<meta
 					name="description"
-					content={t("htmlHead.content") || ""}
+					content={t("htmlHead.content") ?? ""}
 				/>
 				<meta name="theme-color" content="#000000" />
 			</Helmet>

@@ -2,11 +2,11 @@ import birdImgUrl from "../img/bird.jpg";
 import spotifyImgUrl from "../img/spotify.jpg";
 import deliveryImgUrl from "../img/delivery.jpg";
 import alCatanImgUrl from "../img/al-catan.jpg";
-import iProffiImgUrl from "../img/iproffi.jpg";
 import fooBarImgUrl from "../img/foo-bar.jpg";
 import hackImgUrl from "../img/hackathon.jpg";
-import mariImgUrl from "../img/mari.png";
-import HackModal from "../../entities/HackModal/HackModal";
+import threeImgUrl from "../img/3d.jpg";
+// import HackModal from "../../entities/HackModal/HackModal";
+// import iProffiImgUrl from "../img/iproffi.jpg";
 
 export const cases = [
 	{
@@ -15,8 +15,8 @@ export const cases = [
 			"React app (for any device)",
 			"Page with 3D-objects optimized for non-desktop devices",
 		],
-		url: "https://maritami.ildan-dev.ru/",
-		imageUrl: mariImgUrl,
+		url: "https://3d.ildan-dev.ru/",
+		imageUrl: threeImgUrl,
 	},
 	{
 		title: "Spotify clone",
@@ -36,15 +36,15 @@ export const cases = [
 		url: "https://foo-bar.ildan-dev.ru/",
 		imageUrl: fooBarImgUrl,
 	},
-	{
-		title: "Iproffi",
-		subtitles: [
-			"React app (TEMPORARY UNAVAILABLE)",
-			"Course platform like Geekbrains and Skillbox",
-		],
-		url: "https://i-proffi.com/",
-		imageUrl: iProffiImgUrl,
-	},
+	// {
+	// 	title: "Iproffi",
+	// 	subtitles: [
+	// 		"React app (TEMPORARY UNAVAILABLE)",
+	// 		"Course platform like Geekbrains and Skillbox",
+	// 	],
+	// 	url: "https://i-proffi.com/",
+	// 	imageUrl: iProffiImgUrl,
+	// },
 	{
 		title: "Hotel 'Bird'",
 		subtitles: ["Self-made template for Wordpress site"],
